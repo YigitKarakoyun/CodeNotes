@@ -1,0 +1,17 @@
+import javax.swing.JFrame;
+class ana_class{
+    public static void main(String args[]){
+	String[] nesneler = {"elma","kitap","kiraz","karpuz","buz"};
+	// Baþlayan
+	for(String w: nesneler){
+	    if(w.startsWith("ki"))
+		System.out.println(w + " ki hecesi ile baþlayan nesneler");
+        }
+    	// Biten
+    	for(String w: nesneler){
+	    if(w.endsWith("uz"))
+		System.out.println(w + " uz harfleri ile biten nesneler");
+	    
+	}
+    }
+}

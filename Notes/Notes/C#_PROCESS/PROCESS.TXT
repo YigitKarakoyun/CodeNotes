@@ -1,0 +1,30 @@
+//-------------------ADRES-------------------
+http://www.muratoner.net/csharp/process-sinifini-kullanarak-neler-yapabiliriz
+
+//EKLENECEK USING
+using System.Diagnostics;
+
+//-------------------DIZINI AÇMA-------------------
+Process.Start("C:\\");
+
+//-------------------DOSYAYI AÇMA-------------------
+Process.Start("ornek.txt");
+
+//-------------------WEBTE ARAMA-------------------
+Process.Start("http://google.com/search?q=" + "muratoner.net");
+
+//-------------------WORD DOSYASINA AÝT YOLU AÇAR-------------------
+ProcessStartInfo startInfo = new ProcessStartInfo();
+StartInfo.FileName = "WINWORD.EXE";
+startInfo.Arguments = @"C:\Users\Murat\Documents\Gears.docx";
+Process.Start(startInfo);
+
+//-------------------NOTEPAD AÇIP 2 SANÝYE SONRA KÝLL-------------------
+// notepad baþlatýlýyor.
+Process process = Process.Start("notepad.exe");
+
+// 2 saniye bekliyoruz.
+Thread.Sleep(2000);
+
+// notepad'i kapatýyoruz.
+process.Kill();

@@ -1,0 +1,9 @@
+void OnCreatedRoom()
+{
+   //Oyuncu ismini vermek
+   PhotonNetwork.playerName = "Slayer1";
+
+   Debug.Log(
+PhotonNetwork.room.Name+" odaya "+
+PhotonNetwork.playerName+" giris yapti.");
+}

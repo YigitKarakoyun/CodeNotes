@@ -1,0 +1,6 @@
+class yas_hesabi{
+    public static void main(String[] args){
+	int yas = 41;
+	System.out.print(yas > 50 ? "Yaþlýsýn" : "Gençsin");
+    }
+}

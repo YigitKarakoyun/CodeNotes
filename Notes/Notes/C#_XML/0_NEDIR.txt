@@ -1,0 +1,11 @@
+XML hem bir teknolojidir hem de bir dildir
+XML dil olarak markup dil’leri yaratmaya yarar.
+XML verileri tanýmlamak için kullanýlan bir teknolojidir.
+XML verileri tanýmlamak için bir standart oluþturmak için yaratýlmýþtýr.
+XML verileri standart bir þekilde tanýmladýðýndan web’te veya herhagi iki program arasýnda veri alýþ veriþi kolaylaþtýrmaktadýr.
+Markup Dili Ne Demek?
+XML dil olarak markup dil’i yaratmaya yarar. 
+Markup dillerine örnek olrak HTML,WML vs.. verilebilir. 
+Bu dillerde veriler bazý iþaretlerle (etiket) iþaretlenirler. 
+Örneðin bir HTML kodunda bir baþlýk yazýsý <h1> etiketi ile iþaretlenir. 
+Sonuç olarak bir belgedeki verileri iþaretlemeye yarayan dillere markup dilleri denir.

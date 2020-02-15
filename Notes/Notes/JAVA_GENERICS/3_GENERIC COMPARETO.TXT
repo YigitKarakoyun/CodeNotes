@@ -1,0 +1,25 @@
+import java.util.*; // list kullanmak için gerekmekte.
+public class ana_class
+{
+  // generic class
+  public static void main(String[] args)
+  {
+    System.out.println(enbuyuk(44,542,21));
+    System.out.println(enbuyuk("elma","armut","karpuz"));
+    System.out.println(enbuyuk('m','z','a'));
+    
+  }
+  //Sadece karþýlaþtýrýlabilir tipteki veriler burada kullanýlabilir.
+  // o nedenle extends Comparable edilmek zorunda.
+  //karþýlaþtýrýlabilir olmak þartý ile her türlü generik veri kullanýlabilir.
+  //hem gerekik data ile çalýþabilir hemde generik datayý return ettirebiliriz.
+  public static <T extends Comparable<T>> T enbuyuk(T a,T b,T c)
+  {
+    T m = a;
+    if(b.compareTo(a)>0)
+      m = b;
+    if(c.compareTo(m)>0)
+      m = c;
+    return m;
+  }
+}

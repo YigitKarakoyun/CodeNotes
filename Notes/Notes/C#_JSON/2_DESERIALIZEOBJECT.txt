@@ -1,0 +1,3 @@
+//-----------------------------JSON COZME STUDENT-------------------------------
+string result = File.ReadAllText(@"student.json");
+Student studentYeni = JsonConvert.DeserializeObject<Student>(result);

@@ -1,0 +1,19 @@
+//----------------------------QRCODE DECODER-----------------------------------
+//using MessagingToolkit.QRCode.Codec;
+//using MessagingToolkit.QRCode.Codec.Data;
+
+try
+{
+   QRCodeDecoder decoder = new QRCodeDecoder();
+   Bitmap bitmap = pictureBox1.Image as Bitmap;
+
+   QRCodeBitmapImage t = new QRCodeBitmapImage(bitmap);
+   string tempString = decoder.Decode(t);
+   MessageBox.Show(tempString);
+}
+catch (Exception ex)
+{
+   MessageBox.Show("Hata: "+ex.Message);
+}
+
+

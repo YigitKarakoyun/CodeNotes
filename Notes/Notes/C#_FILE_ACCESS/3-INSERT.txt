@@ -1,0 +1,23 @@
+//--------------------------------- INSERT ------------------------------------
+
+private void buttonInsert_Click(object sender, EventArgs e)
+{
+   Random rnd = new Random();
+   OleDbConnection conn = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = " + Application.StartupPath + "\\access_db.accdb;Persist Security Info = False;");
+   OleDbCommand command = new OleDbCommand("INSERT INTO Kisiler(Ad,Soyad,Yas) VALUES(?,?,?)", conn);
+   command.Parameters.AddWithValue("?", textBoxAdInsert.Text);
+   command.Parameters.AddWithValue("?", textBoxSoyadInsert.Text);
+   command.Parameters.AddWithValue("?", rnd.Next(0, 200));
+   conn.Open();
+   int etkilenenKayitSayisi = command.ExecuteNonQuery();
+   conn.Close();
+            
+   textBoxAdInsert.Text = "";
+   textBoxSoyadInsert.Text = "";
+   buttonSelect_Click(null,null);
+             
+   if (etkilenenKayitSayisi>0)
+   {
+      MessageBox.Show(etkilenenKayitSayisi+" kayıt etkilenmistir");
+   }
+}

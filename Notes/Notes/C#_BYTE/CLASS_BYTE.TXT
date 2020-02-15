@@ -1,0 +1,21 @@
+[Serializable]
+public sealed class Nesne
+{
+    public int Yas { get; set; }
+    public string AdSoyad { get; set; }
+}
+
+static void Main()
+{
+    var ornek = new Nesne { Yas = 32, AdSoyad = "Cihan Yakar" };
+    byte[] dizi;
+    using (var memoryStream = new MemoryStream())
+    {
+        // System.Runtime.Serialization.Formatters.Binary
+        BinaryFormatter bfWrite = new BinaryFormatter();
+        bfWrite.Serialize(memoryStream, ornek);
+        dizi = memoryStream.ToArray();
+    }
+}
+
+//http://www.cihanyakar.com/bytedizisinecevirme/

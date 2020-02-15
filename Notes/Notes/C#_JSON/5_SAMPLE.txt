@@ -1,0 +1,59 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
+using Newtonsoft.Json;
+namespace projeJSON
+{
+    public partial class Form1 : Form
+    {
+        public Form1(){InitializeComponent();}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //STUDENT SINIF
+            Student student = new Student();
+            student.Id = 1;
+            student.Name = "CAMEL";
+            student.Degree = "B1";
+            student.Hobies = new List<string>()
+            {
+                "Futbol","Voleybol"
+            };
+            //JSON STRING OLUSTURMA
+            string result = JsonConvert.SerializeObject(student);
+
+            //JSON STRINGI JSON UZANTILI DOSYA OLARAK YAZMA
+            File.WriteAllText(@"student.json",result);
+            MessageBox.Show(result+" Olusturuldu");
+
+            //JSON COZME STUDENT
+            result = File.ReadAllText(@"student.json");
+            Student studentYeni = JsonConvert.DeserializeObject<Student>(result);
+            
+            MessageBox.Show(studentYeni.Id+"\n"+
+            studentYeni.Name+"\n"+
+            studentYeni.Degree+"\n"+
+            studentYeni.Hobies);
+
+            //JSON COZME DICTIONARY
+            result = File.ReadAllText(@"student.json");
+            var dictionary = JsonConvert.DeserializeObject<IDictionary>(result);
+            string tempDictionary = "";
+            foreach (DictionaryEntry item in dictionary)
+            {
+                tempDictionary+=(item.Key+": "+item.Value)+"\n";
+            }
+            MessageBox.Show(tempDictionary);
+        }
+    }
+    class Student
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Degree { get; set; }
+        public List<string> Hobies { get; set; }
+    }
+    
+}

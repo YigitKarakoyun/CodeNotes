@@ -1,0 +1,14 @@
+import java.util.Random;
+class apples{
+public static void main(String[] args){
+    Random rast = new Random();
+    int frekans[] = new int[7]; //0 dan baþladýðý için 7 tane
+    for (int atma=1;atma<1000;atma++){ // zarda 0 olmadýðý için 1 den baþlýyoruz.
+        ++frekans[1+rast.nextInt(6)];  
+	//her seferinde gelen sayý dizinin ilgili indexine artý 1 olarak eklenir.
+    }
+    System.out.println("Face\t Frequency");
+    for (int sira=1;sira<frekans.length;sira++){
+        System.out.println(sira+ "\t" +frekans[sira]);
+    }
+}

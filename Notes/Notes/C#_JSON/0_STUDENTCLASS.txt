@@ -1,0 +1,23 @@
+//---------------------STUDENT CLASS-------------------------------------------
+class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Degree { get; set; }
+    public List<string> Hobies { get; set; }
+}
+
+//---------------------DICTIONARY FOREACH DEÐERLERÝ OKUMA-----------------------
+string tempDictionary = "";
+foreach (DictionaryEntry item in dictionary)
+{
+    tempDictionary+=(item.Key+": "+item.Value)+"\n";
+}
+MessageBox.Show(tempDictionary);
+
+//---------------------STUDENT CLASS YAZDIRMA------------------------------------
+MessageBox.Show(
+studentYeni.Id+"\n"+
+studentYeni.Name+"\n"+
+studentYeni.Degree+"\n"+
+studentYeni.Hobies);

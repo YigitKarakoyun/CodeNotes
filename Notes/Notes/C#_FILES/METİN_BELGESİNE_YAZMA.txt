@@ -1,0 +1,7 @@
+//------------------------- TEXT BELGESININ ICINI TEMIZLEME-------------------------
+string path = @"C:\\metin.txt";
+TextWriter tw = new StreamWriter(path);
+tw.Write("");
+tw.Close(); 
+
+//WriteLine yap satır satır eklesin

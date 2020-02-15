@@ -1,0 +1,84 @@
+/*
+ * Dizideki en büyük deðer 2 þekilde bulunur:
+ * 1. Ana class içinde yer alan metot aracýlýðýyla bulunur.
+ * 2. Bulma iþi parçalara bölünür, thread'lere yaptýrýlýr.
+ * Ýki durum için de performanslar ortaya konur.
+ */
+import java.util.Random;
+public class Maximum {
+    public int maxBul(int[] dizi){
+        int max = dizi[0];
+        for (int i = 0; i < dizi.length; i++) {
+            if(dizi[i]>max)
+                max = dizi[i];
+            
+            sleep(1);
+        }
+        return max;
+    }
+    public void sleep(int ms){
+        try {
+        Thread.sleep(ms);
+        } catch (Exception e) {
+        }
+    }
+    public static void main(String[] args) {
+      Maximum m = new Maximum();
+        //1000 elemanlý ve her elemani 0 ile 200 arasinda
+        //rasgele bir sayi olan bir dizi olusturup icini
+        //dolduralim
+        int[] dizi = new int[1000];
+        Random r = new Random();
+        for (int i = 0; i < dizi.length; i++) {
+            dizi[i] = r.nextInt(200);
+        }
+        // maxBul metodunun ne kadar zamanda bulduðunu hesaplayalim
+        System.out.println("maxBul METODU");
+        long start  = System.currentTimeMillis();
+        System.out.println("EnBuyuk -> " + m.maxBul(dizi));
+        long finish = System.currentTimeMillis();
+        System.out.println("maxBul metodunun bulma süresi " + (finish-start) + " ms");
+        //Problemi parçalara bölüp thread'lere aratalým.
+        MaxThread t1 = new MaxThread(dizi, 0, 200);
+        MaxThread t2 = new MaxThread(dizi, 200, 400);
+        MaxThread t3 = new MaxThread(dizi, 400, 600);
+        MaxThread t4 = new MaxThread(dizi, 600, 800);
+        MaxThread t5 = new MaxThread(dizi, 800, 1000);
+        System.out.println("");
+        System.out.println("THREAD");
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
+        t5.start();
+    }
+}
+class MaxThread extends Thread{
+    int s, f;
+    int[] a;
+    public MaxThread(int[] array,
+            int start,
+            int finish){
+        a = array;
+        s = start;
+        f = finish;
+    }
+    public void run(){
+        long start  = System.currentTimeMillis();
+        enBuyuk();
+        long finish = System.currentTimeMillis();
+        System.out.println(this.getName() + " " + (finish-start) + " ms");
+    }
+    public int enBuyuk(){
+        int max = a[0];
+        for (int i = s; i < f; i++) {
+            if(a[i]>max)
+                max = a[i];
+            try {
+                this.sleep(2);
+            } catch (Exception e) {
+            }
+        }
+        return max;
+    }
+}

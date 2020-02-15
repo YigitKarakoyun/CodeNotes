@@ -1,0 +1,23 @@
+#region IMAGE BYTE DÖNÜÞÜMLERÝ
+        public Image get_ByteDizisini_Image_Donustur(byte[] byteArrayIn)
+        {
+            try
+            {
+                MemoryStream ms = new MemoryStream(byteArrayIn);
+                Image returnImage = Image.FromStream(ms);
+                return returnImage;
+            }
+            catch (Exception) { return null; }
+
+        }
+
+        public byte[] get_Imagei_ByteDizisine_Donustur(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+        #endregion

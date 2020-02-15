@@ -1,0 +1,5 @@
+//------------------------ UYGULAMAYI KUCULTUYOR---------------------------------- 
+private void buttonMinimize_Click(object sender, EventArgs e)
+{
+     WindowState = FormWindowState.Minimized;
+}

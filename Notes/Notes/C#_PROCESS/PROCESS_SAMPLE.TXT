@@ -1,0 +1,13 @@
+//-----------------------------DOSYA YOLU AÇMA-------------------------------
+
+//EKLENECEK USING
+using System.Diagnostics;
+
+string myDocspath = "";
+myDocspath = getKlasorYolu(klasorIndeks);
+
+string windir = Environment.GetEnvironmentVariable("WINDIR");
+System.Diagnostics.Process prc = new System.Diagnostics.Process();
+prc.StartInfo.FileName = windir + @"\explorer.exe";
+prc.StartInfo.Arguments = myDocspath;
+prc.Start();

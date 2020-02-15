@@ -1,0 +1,3 @@
+//GEREKLÝLÝK SCRÝPTÝ
+[RequireComponent(typeof(AudioSource))]
+public class ExampleScript : MonoBehaviour

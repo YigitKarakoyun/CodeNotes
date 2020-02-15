@@ -1,0 +1,4 @@
+void OnCreatedRoom()
+{
+    Debug.Log(PhotonNetwork.room.Name+" ADINDA ODA OLUÞTURULDU");
+}

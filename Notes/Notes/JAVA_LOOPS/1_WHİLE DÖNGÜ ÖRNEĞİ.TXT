@@ -1,0 +1,10 @@
+// While kullanýmý.
+class ana_sayac{
+    public static void main(String args[]){
+	int say=0;
+	while (say <10){
+	    System.out.println(say);
+	    say++;
+	}
+    }
+}

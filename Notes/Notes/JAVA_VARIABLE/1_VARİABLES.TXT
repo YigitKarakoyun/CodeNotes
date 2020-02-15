@@ -1,0 +1,10 @@
+class ana{
+    public static void main(String args[]){
+	double dubnumber;
+	dubnumber = 8.17;
+	System.out.print("Ben");
+	System.out.print(dubnumber);
+	System.out.println(" filim");
+	System.out.print("elma");
+    }
+}

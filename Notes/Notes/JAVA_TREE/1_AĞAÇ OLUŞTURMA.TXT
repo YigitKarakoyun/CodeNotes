@@ -1,0 +1,27 @@
+public class Tree{
+    int number;
+    Tree left, right;
+    public Tree(int sayi, 
+        Tree lefttree, 
+        Tree righttree) {
+        this.number = sayi;
+        this.left = lefttree;
+        this.right = righttree;
+    }
+    public static void print(Tree tree) {
+        if (tree == null)return;
+        print(tree.left);
+        System.out.print(tree.number + " ");
+        print(tree.right);
+    }    
+}
+public class CreateTree {
+    public static void main(String[] args) {
+      Tree bes = new Tree(5, null, null);
+      Tree dort = new Tree(4, null, null);
+      Tree iki = new Tree(2, dort, bes);
+      Tree uc = new Tree(3, null, null);
+      Tree bir = new Tree(1, iki, uc);
+      Tree.print(bir);
+    }
+}

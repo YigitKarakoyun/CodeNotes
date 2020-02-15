@@ -1,0 +1,13 @@
+// Yaþa göre içerik oluþtur.
+class ana{
+    public static void main(String args[]){
+	int age;
+	yas = 3;
+	switch (yas){
+	    case 1:System.out.println("Aðlayabilirsin ");break;
+	    case 2:System.out.println("Konuþabilirsin");break;
+	    case 3:System.out.println("Belaya bulaþabilirsin");break;
+	    default:System.out.println("Kaç yasindasin bilmiyorum!");break;
+        }
+    }
+}

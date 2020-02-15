@@ -1,0 +1,16 @@
+import java.util.*;
+class ana_class{
+    public static void main(String args[]){
+	//String diziyi ve ArrayListti tanýmla.
+	String [] meyveler = {"kiraz","muz","karpuz","kavun"};
+	LinkedList<String> liste1 = new LinkedList<String>(Arrays.asList(meyveler));
+	
+	// liste1'e ekleme
+	liste1.add("elma");
+	liste1.addFirst("armut");
+	
+	// linklisti diziye çevirme
+	meyveler = liste1.toArray(new String [liste1.size()]);
+	for(String x: meyveler) System.out.printf("%s ",x); //dizi
+    }
+}

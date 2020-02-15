@@ -1,0 +1,37 @@
+https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/linq/how-to-dynamically-create-a-database
+
+//-------------------------------------------------------------
+//The following code provides an example of how to create a new database named MyDVDs.mdf.
+public class MyDVDs : DataContext
+{
+    public Table<DVD> DVDs;
+    public MyDVDs(string connection) : base(connection) { }
+}
+
+[Table(Name = "DVDTable")]
+public class DVD
+{
+    [Column(IsPrimaryKey = true)]
+    public string Title;
+    [Column]
+    public string Rating;
+}
+//-------------------------------------------------------------
+//You can use the object model to create a database by doing the following:
+public void CreateDatabase()
+{
+    MyDVDs db = new MyDVDs("c:\\mydvds.mdf");
+    db.CreateDatabase();
+}
+//--------------------------------------------------------------
+//The following example shows one way these methods can be used to implement this approach:
+public void CreateDatabase2()
+{
+    MyDVDs db = new MyDVDs(@"c:\mydvds.mdf");
+    if (db.DatabaseExists())
+    {
+        Console.WriteLine("Deleting old database...");
+        db.DeleteDatabase();
+    }
+    db.CreateDatabase();
+}

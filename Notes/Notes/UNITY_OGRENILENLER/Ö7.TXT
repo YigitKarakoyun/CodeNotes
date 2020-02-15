@@ -1,0 +1,9 @@
+animclip 
+	has exit time: animasyon bittikten sonra geç
+
+geçiþ çubuðuna bas 	
+	settings: geçiþ yumuþaklýðý ayarlar.
+	transition duration: geçiþ yumuþaklýðý
+
+AnimController
+	avatar ekli olmasý lazým yoksa çalýþmaz

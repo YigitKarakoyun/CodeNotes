@@ -1,0 +1,16 @@
+C++ Infinitive do-while Loop Example
+#include <iostream>  
+using namespace std;  
+int main() {  
+      do{    
+              cout<<"Infinitive do-while Loop";    
+          } while(true);     
+}  
+Output:
+
+Infinitive do-while Loop 
+Infinitive do-while Loop
+Infinitive do-while Loop
+Infinitive do-while Loop
+Infinitive do-while Loop
+ctrl+c

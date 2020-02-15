@@ -1,0 +1,51 @@
+Hayvanlar png yaz arat
+Karakter sprite arat
+
+
+***Window - Package Manager(Yüklü olmayan paketler yüklenir)***
+2d yaparsak projeyi(Yapmazsak 2d paket yüklemez multiple yapamayýz)
+	Üzerine týklanarak 3d yapýlabilir
+	Varsayýlan resimler sprite oluuyor
+	Edit - Project Settings - Editor -Default Behaviour Mode
+
+Ui Sprite(En aþaðýdaki en önde görünür)
+	Multiple(Sprite Editor)
+	Fare sol sürükle býrak Kutu oluþur
+	Method 
+		Delete Existing(Silip baþtan oluþturacak)
+		Smart: Onlar kalýcak
+		Safe	
+
+	Pixel per unit Birim alanda gösterilecek pixel sayýsý(Artarsa boyutu küçülür)
+		
+
+	//ANÝMASYON
+	* Oluþturulan resimleri hepsini seçip sürükle býrak yaparsak animasyon yapar.
+	Sprite renderer ve Animator nesnesi ile animasyon görüntülenir.
+
+	//COLLIDER
+	Collider eklersek 2dPoligon daha gerçekçi collider olur
+	Edit Collider düzenleme yapýlabilir.
+	
+	Edge Collider týklayarak Çizgi colliderýdýr.(Çizgi kenarlarýyla çizmeye yarar.)
+
+	istrigger içinden geçilebilir obje haline gelir.
+
+	//FREEZE
+	X Y Hareketi var
+	Z Dönme hareketi var
+
+	OnMouseDown Üzerine týklama
+
+	//INSTANTÝATE
+	public GameObject kanguru;
+	Vector3 pos = new Vector3(Random.Range(-9,9),Random.Range(-7,3),0);
+	Quaternion q = new Quaternion(0,0,0,0);
+	Instantiate(kanguru,pos,q);
+
+//WINDOW-ANIMATION
+	Nesneyi seç animation create týkla.
+	Kaydete basýp patlama göstereceði için.
+	Add property sprite renderer. Sprite týklanýr.
+	
+	Animasyon looptime false yap 1 kere patlasýn

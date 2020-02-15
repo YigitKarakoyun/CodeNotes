@@ -1,0 +1,23 @@
+C++ Function Example
+Let's see the simple example of C++ function.
+
+#include <iostream>  
+using namespace std;  
+void func() {    
+    static int i=0; //static variable    
+    int j=0; //local variable    
+    i++;    
+    j++;    
+    cout<<"i=" << i<<" and j=" <<j<<endl;    
+}    
+int main()  
+{  
+    func();    
+    func();    
+    func();    
+}  
+Output:
+
+i= 1 and j= 1
+i= 2 and j= 1
+i= 3 and j= 1

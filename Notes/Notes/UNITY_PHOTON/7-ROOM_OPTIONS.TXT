@@ -1,0 +1,10 @@
+void OnJoinedLobby()
+{
+    RoomOptions roomOptions = new RoomOptions() {
+      MaxPlayers = 7,
+      IsVisible = true,
+      IsOpen = true,
+    };
+    Debug.Log("LOBBY ERÝÞÝLDÝ");
+    PhotonNetwork.JoinOrCreateRoom("Oda1",roomOptions,TypedLobby.Default);
+}

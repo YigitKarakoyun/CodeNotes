@@ -1,0 +1,30 @@
+flame arat resim indir.
+
+particals
+	Gravity Modifier: Yerçekimi kuvveti 0 yok demek
+	Gravity Modifier 0.5 yap start speed 6 yap çok güzel 
+	Max particals maksimum parçacýk sayýsý
+
+	Emission: Rate over time 1 saniyede kaç tane parçacýk oluþacak demek
+	Burst toplu parçacýk oluþumu istiyorsak(Ne zaman oluþacak, Kaç tane olacak, kaç defa olacak, Ne kadar zaman aralýðýyla tetikleneceði)
+	
+	Shape:
+		Shphere patlama þekli deðiþir. 
+		Angle 0 alýrsan açýsýz olur.
+
+	ColorOverLifeTime Zamana baðlý renk deðiþimi yapar.
+	
+	SizeOverLifeTime: Zamana baðlý parçacýklarýn küçülmesini isteyebiliriz.
+	
+	
+Prefab direk baðlanýlabilir.Sahnede olmasý gerekmez
+
+GetComponentInChildren<Animation>().play() alt objesine ulaþýr.
+
+Ui Image
+	image type Filled 
+	Fill Method Horizantol
+	Fill Amount
+
+Create - Animator Controller
+Create - Animation

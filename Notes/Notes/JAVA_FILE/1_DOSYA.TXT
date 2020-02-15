@@ -1,0 +1,7 @@
+//----------------------------------DOSYA OLUÞTURUR-----------------------------
+String yeniYol = "C:\\CAN\\";
+File dosyaOlustur = new File(yeniYol);
+boolean kontrol = dosyaOlustur.createNewFile();
+if (kontrol) {
+   //DOSYA OLUÞTURULDU
+}

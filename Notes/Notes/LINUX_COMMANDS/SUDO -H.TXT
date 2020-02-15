@@ -1,0 +1,46 @@
+Seçenekler:
+  -A, --askpass                 parola sorgulamasý için bir yardýmcý
+                                program kullan
+  -b, --background              arkaalanda komutu çalýþtýr
+  -C, --close-from=num          >= sayý olan tüm dosya tanýmlayýcýlarýný
+                                kapat
+  -E, --preserve-env            komut çalýþtýrýlýrken kullanýcý
+                                ortamýný koru
+      --preserve-env=list       özel çevre deðiþkenlerini koru
+  -e, --edit                    komut çalýþtýrmak yerine dosyalarý
+                                düzenleyiniz
+  -g, --group=group             grup adý veya ID olarak tanýmlanan komutu
+                                çalýþtýr
+  -H, --set-home                HOME deðiþkenini kullanýcýnýn ev dizinine
+                                hedefle
+  -h, --help                    yardým mesajýný görüntüle ve çýk
+  -h, --host=host               komutunuzu hostta çalýþtýrýn (eðer plugin
+                                tarafýndan destekleniyorsa)
+  -i, --login                   oturum kabuðunu hedef kullanýcý olarak
+                                çalýþtýr; bir komut da belirtilebilir
+  -K, --remove-timestamp        zaman damgasý dosyasýný kalýcý olarak
+                                kaldýr
+  -k, --reset-timestamp         zaman damgasý dosyasýnýn geçerliliðini
+                                kaldýr
+  -l, --list                    kullanýcý yetkilerini listele veya özel bir
+                                komut denetle; daha uzun biçim için iki kez
+                                kullanýn
+  -n, --non-interactive         etkileþimsiz kip, sorgu yapýlmaz
+  -P, --preserve-groups         hedefe atamak yerine grup vektörünü koru
+  -p, --prompt=prompt           belirtilen parola sorgusunu kullan
+  -r, --role=role               SELinux güvenlik baðlamýný belirtilen rol
+                                ile oluþtur
+  -S, --stdin                   standart girdiden þifreyi okuyun
+  -s, --shell                   kabuðu hedef kullanýcý olarak çalýþtýr;
+                                bir komut da belirtilebilir
+  -t, --type=type               SELinux güvenlik baðlamýný belirtilen tür
+                                ile oluþtur
+  -T, --command-timeout=timeout belirtilen süre sonunda komutu sonlandýr
+  -U, --other-user=user         liste modunda, kullanýcýlarýn
+                                ayrýcalýklarýný görüntüle
+  -u, --user=user               belirtilen kullanýcý adý veya ID ile komutu
+                                çalýþtýrýn (veya dosyayý düzenleyin)
+  -V, --version                 sürüm bilgisini göster ve çýk
+  -v, --validate                kullanýcý zaman damgasýný bir komut
+                                çalýþtýrmadan güncelle
+  --                            komut satýrý argümanlarýný iþlemeyi durdur

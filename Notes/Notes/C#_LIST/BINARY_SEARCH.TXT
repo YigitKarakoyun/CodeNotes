@@ -1,0 +1,9 @@
+//BINARY SEARCH
+List<string> isimler = new List<string>();
+isimler.Add("Ali");
+isimler.Add("Ahmet");
+isimler.Add("Mehmet");
+isimler.Add("Kemal");
+
+int aranaIndex = isimler.BinarySearch("Ahmet"); //arananIndex:1
+int aranaIndex2 = isimler.BinarySearch("Yusuf"); // negatif deðer

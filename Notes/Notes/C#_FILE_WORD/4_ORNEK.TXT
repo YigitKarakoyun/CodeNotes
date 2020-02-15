@@ -1,0 +1,81 @@
+using System;
+using System.Windows.Forms;
+using word = Microsoft.Office.Interop.Word;
+using System.Reflection;//Meta data
+using System.IO;
+
+namespace projeWord
+{
+    public partial class Form1 : Form
+    {
+        public Form1(){ InitializeComponent();richTextBox1.Text = "WORD UYGULAMA ÖRNEÐÝ\nSATIR 2 ÖRNEK"; }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            word.Application word_app = new word.Application();
+            word_app.Visible = true;
+            word.Document word_doc;
+            object word_object = Missing.Value;
+            word_doc = word_app.Documents.Add(ref word_object);
+            word_app.Selection.TypeText(richTextBox1.Text);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            object omissing = Missing.Value;
+            object dokumansonu = "\\endofdoc";
+
+            word.Application olustur;
+            word.Document icerik;
+            olustur = new word.Application();
+            olustur.Visible = true;
+            icerik = olustur.Documents.Add(ref omissing);
+
+            //PARAGRAF1
+            word.Paragraph paragraph1;
+            paragraph1 = icerik.Content.Paragraphs.Add(ref omissing);
+            paragraph1.Range.Text = richTextBox1.Text;
+            paragraph1.Range.Font.Bold = 1;
+            paragraph1.Format.SpaceAfter = 50;
+            paragraph1.Range.InsertParagraphAfter();
+
+            //PARAGRAF2
+            word.Paragraph paragraph2;
+            object hedef = icerik.Bookmarks.get_Item(ref dokumansonu).Range;
+            paragraph2 = icerik.Content.Paragraphs.Add(ref hedef);
+            paragraph2.Range.Text = "Ýkinci Paragraf";
+            paragraph2.Range.Font.Bold = 0;
+            paragraph2.Format.SpaceAfter = 100;
+            paragraph2.Range.InsertParagraphAfter();
+
+            //PARAGRAF3
+            word.Paragraph paragraph3;
+            hedef = icerik.Bookmarks.get_Item(ref dokumansonu).Range;
+            paragraph3 = icerik.Content.Paragraphs.Add(ref hedef);
+            paragraph3.Range.Text = "Üçüncü Paragraf";
+            paragraph3.Range.Font.Bold = 2;
+            paragraph3.Format.SpaceAfter = 30;
+            paragraph3.Range.InsertParagraphAfter();
+
+            //Tablo
+            word.Table olusturTablo;
+            word.Range word_range = icerik.Bookmarks.get_Item(ref dokumansonu).Range;
+            olusturTablo = icerik.Tables.Add(word_range,3,5,ref omissing, ref omissing);
+
+            paragraph3.Range.ParagraphFormat.SpaceAfter = 10;
+
+            int r, c;
+            string strText;
+            for (r = 0; r <=3; r++)
+            {
+                for (c = 1; c <= 5; c++)
+                {
+                    strText = "Satýr" + r + "Sütun" + c;
+                    olusturTablo.Rows[1].Range.Font.Bold = 1;
+                    olusturTablo.Rows[1].Range.Font.Italic = 1;
+                }
+            }
+        }
+    }
+}

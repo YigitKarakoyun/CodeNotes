@@ -1,0 +1,11 @@
+// &&AND || OR kullanımı
+class yas{
+    public static void main(String args[]){
+	int yas;
+	yas =21;
+	if(yas>10 && yas<21){ //try ||
+	    System.out.println("Çok gençsin");
+	}
+	else{ System.out.println("Tamam yeteri kadar büyüksün!"); }
+    }
+}

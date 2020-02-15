@@ -1,0 +1,15 @@
+//DOSYA ISMIYLE CLASS ISMI AYNI OLMALI
+class ana{
+    public static void main(String args[]){
+	System.out.printf("Merhaba Dünya!");
+    }
+}
+ 
+
+Java Kodu Derleme
+Cmd ekranýnda aþaðýdaki kodlarý yazarak çalýþtýrabilirsiniz.
+
+Örnek
+Yazýlan kodun dizinini bulup dosyaadý ve java dosya uzantýsýnýn bilgisini giriniz.
+javac deneme.java
+java ana

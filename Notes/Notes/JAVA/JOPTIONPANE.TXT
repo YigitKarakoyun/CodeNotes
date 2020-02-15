@@ -1,0 +1,1 @@
+JOptionPane.showMessageDialog(null, "Boþ girdi kabul edilemez", "HataKutusu: " + "Boþ Girdi Hatasý", JOptionPane.ERROR_MESSAGE);

@@ -1,0 +1,17 @@
+import java.util.Scanner;
+class ortalama{
+    public static void main(String[] args){
+	Scanner giris = new Scanner(System.in);
+	int toplam = 0;
+	int grade;
+	int ortalama;
+	int sayac = 0;
+	while (sayac <10){
+	    grade = giris.nextInt();
+	    toplam += grade ;
+	    sayac++;
+	}
+	ortalama = toplam/10;
+	System.out.println("Girilen on sayýnýn ortalamasý " + ortalama);
+    }
+}

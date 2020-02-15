@@ -1,0 +1,25 @@
+import java.util.Scanner;
+class ana{
+    public static void main(String[] args){
+	Scanner input = new Scanner(System.in);
+	diger digerObject = new diger();
+	System.out.println("Ýlk kýz arkadasinin adi: ");
+	String temp =  input.nextLine();
+	digerObject.setName(temp);
+	digerObject.saying();
+    }
+}
+
+
+public class diger{
+    private String girlName;
+    public void setName(String name){
+	girlName = name;
+    }
+    public String getName() {
+	return girlName;
+    }
+    public void saying() {
+	System.out.printf("Senin ilk kýz arkadasin %s", getName());
+    }
+}

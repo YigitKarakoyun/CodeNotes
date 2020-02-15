@@ -1,0 +1,14 @@
+
+//--------------------------------- DELETE ------------------------------------
+private void buttonDelete_Click(object sender, EventArgs e)
+{
+   int seciliKayitId = int.Parse(listBox2.SelectedItem.ToString().Split('-')[0]);
+   OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+Application.StartupPath+"//access_db.accdb;Persist Security Info = False;");
+   OleDbCommand comm = new OleDbCommand("DELETE FROM Kisiler WHERE ID=" + seciliKayitId, conn);
+   //OleDbCommand comm = new OleDbCommand("DELETE FROM Kisiler WHERE ID=?",conn);
+   //comm.Parameters.AddWithValue("?",seciliKayitId);
+   conn.Open();
+   int etkilenenKayit = comm.ExecuteNonQuery();
+   conn.Close();
+   MessageBox.Show(etkilenenKayit+" kayıt etkilenmiştir");
+}

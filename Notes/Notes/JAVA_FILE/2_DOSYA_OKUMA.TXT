@@ -1,0 +1,21 @@
+//--------------------------DOSYA OKUMA----------------------------------------
+public void setDosyaOkuma(int indeks,JTextArea textArea) throws IOException 
+    {        
+        File dosya = null; 
+        try {
+            dosya = "C:\\yeni.txt";
+            BufferedReader br = new BufferedReader(new FileReader(dosya));
+            
+            String st; 
+            textArea.setText("");
+            while ((st = br.readLine()) != null) {
+                textArea.append(st+"\n");
+            }
+            
+        } 
+        catch (Exception e) 
+        {            
+        } 
+        
+    
+    }

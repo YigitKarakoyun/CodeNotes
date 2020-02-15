@@ -1,0 +1,10 @@
+Download Eclipse
+
+eclipse.org ->Download->
+Eclipse IDE for Java EE Developers->Extract All->
+Exlipse.exe->Short Cut to Desktop
+
+File->New->Java Project->Project Name-> Proje ismi (Örnek:bucky)
+
+Sol taraftaki Pack ekranýnda proje ismini bulun.
+Sað click->New->Class->Class Name Örnek:apples

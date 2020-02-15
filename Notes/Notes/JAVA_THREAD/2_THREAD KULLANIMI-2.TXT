@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+      Threads i1 = new Threads();
+      Threads i2 = new Threads();
+      Threads i3 = new Threads();
+      Threads i4 = new Threads();
+        long baslangýc = System.currentTimeMillis();
+        i1.start();
+        i2.start();
+        i3.start();
+        i4.start();
+        long bitis = System.currentTimeMillis();
+        System.out.println("Gecen Zaman = " +
+                (bitis - baslangýc));
+    }
+}
+class Threads extends Thread {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(this.getName() + " : " + i);
+            try {
+                //2 sn uyu
+                this.sleep(2000);
+            } catch (Exception e) {}
+        }
+    }
+}

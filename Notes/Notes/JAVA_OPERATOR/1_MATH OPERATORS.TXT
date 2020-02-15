@@ -1,0 +1,10 @@
+class apples
+{
+    public static void main(String args[]){
+	int girls,boys,peoples; //try with double
+	girls= 6;
+	boys = 3;
+	peoples = girls + boys; //try with - % * /
+	System.out.println("All Peoples: " + peoples);
+    }
+}

@@ -1,0 +1,71 @@
+https://docs.microsoft.com/en-us/sql/visual-studio-code/sql-server-develop-use-vscode?view=sql-server-ver15
+
+---CREATE DATABASE---
+-- Create a new database called 'TutorialDB'
+-- Connect to the 'master' database to run this snippet
+USE master
+GO
+IF NOT EXISTS (
+   SELECT name
+   FROM sys.databases
+   WHERE name = N'TutorialDB'
+)
+CREATE DATABASE [TutorialDB]
+GO
+
+
+---CREATE TABLE---
+EmployeesId INT NOT NULL PRIMARY KEY,
+Name [NVARCHAR](50)  NOT NULL,
+Location [NVARCHAR](50)  NOT NULL
+
+
+---INSERT TABLE---
+-- Insert rows into table 'Employees'
+INSERT INTO Employees
+   ([EmployeesId],[Name],[Location])
+VALUES
+   ( 1, N'Jared', N'Australia'),
+   ( 2, N'Nikita', N'India'),
+   ( 3, N'Tom', N'Germany'),
+   ( 4, N'Jake', N'United States')
+GO
+-- Query the total count of employees
+SELECT COUNT(*) as EmployeeCount FROM dbo.Employees;
+-- Query all employee information
+SELECT e.EmployeesId, e.Name, e.Location
+FROM dbo.Employees as e
+GO
+
+
+https://support.microsoft.com/tr-tr/help/307283/how-to-create-a-sql-server-database-programmatically-by-using-ado-net
+String str;    SqlConnection myConn = new SqlConnection ("Server=localhost;Integrated security=SSPI;database=master");
+
+    str = "CREATE DATABASE MyDatabase ON PRIMARY " +
+        "(NAME = MyDatabase_Data, " +
+        "FILENAME = 'C:\\MyDatabaseData.mdf', " +
+        "SIZE = 2MB, MAXSIZE = 10MB, FILEGROWTH = 10%) " +
+        "LOG ON (NAME = MyDatabase_Log, " +
+        "FILENAME = 'C:\\MyDatabaseLog.ldf', " +
+        "SIZE = 1MB, " +
+        "MAXSIZE = 5MB, " +
+        "FILEGROWTH = 10%)";
+
+    SqlCommand myCommand = new SqlCommand(str, myConn);
+    try 
+    {
+        myConn.Open();
+myCommand.ExecuteNonQuery();
+MessageBox.Show("DataBase is Created Successfully", "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+    catch (System.Exception ex)
+    {
+MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    }
+    finally
+    {
+if (myConn.State == ConnectionState.Open)
+{
+    myConn.Close();
+}
+    }

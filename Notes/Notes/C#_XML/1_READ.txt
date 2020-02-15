@@ -1,0 +1,26 @@
+//-------------------------------XML READ-----------------------------------
+XDocument xDoc = XDocument.Load(@"..\..\Data\rehber.xml");�
+//Xml dosyamiza erisip y�kleme islemini gerceklestiriyoruz.
+
+XElement rootElement = xDoc.Root;
+//Olusturduğumuz Root elementine XML dokumananında ki root elementini seçmesini sağlıyoruz.
+
+String AD, Email, Tel, ID;�
+//Okunan element deki veriler için değişken tanımlıyoruz.
+
+foreach (XElement rehberimiz in rootElement.Elements())�
+//Foreach ile okudumuz root tagları arasındaki Rehber Elementi içinde dönüyoruz ver verileri okumaya başlıyoruz.
+{
+   //Rehber elementinin atribute id sini al.
+   //Rehber elementimize ait kişi_Adı elementin değerini al.
+   //Rehber elementimize ait kisi_EMail elementin değerinial.
+   //Rehber elementimize ait kisi_Tel elementin değerini al.
+
+   ID = rehberimiz.Attribute("id").Value;
+   AD = rehberimiz.Element("kisi_Adı").Value;
+   Email = rehberimiz.Element("kisi_EMail").Value;
+   Tel = rehberimiz.Element("kisi_Tel").Value;
+
+   Console.Write("ID: " + ID + " AD: " + AD + " Email: " + Email + " Tel: " + Tel);�
+}
+        

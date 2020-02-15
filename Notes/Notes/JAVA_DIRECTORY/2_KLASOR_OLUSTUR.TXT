@@ -1,0 +1,20 @@
+//------------------------------KLASOR OLUÞTUR----------------------------------
+public void setKlasorOlustur(){
+        String tempString = txtKlasor.getText().trim();
+        if (tempString.length()<=0) {
+            JOptionPane.showMessageDialog(null, "Boþ girdi kabul edilemez", "HataKutusu: " + "Boþ Girdi Hatasý", JOptionPane.ERROR_MESSAGE);
+            txtKlasor.setText("");
+            return;
+        }  
+        //Doluysa
+        try {
+            String yeniYol = bilgiler.dirPath+"\\"+tempString.toUpperCase();
+            System.out.println(yeniYol+" as");
+            File dosyaOlustur = new File(yeniYol);
+            boolean tempKontrol = dosyaOlustur.mkdir();
+            System.out.println(tempKontrol);
+            setListKlasorler();
+            
+            txtKlasor.setText("");
+        } catch (Exception e) {System.out.println("Hata mesajý: "+e.getMessage());}
+    }

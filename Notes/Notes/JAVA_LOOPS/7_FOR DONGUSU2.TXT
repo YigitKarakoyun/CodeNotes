@@ -1,0 +1,24 @@
+import java.util.*; // list kullanmak için gerekmekte.
+public class ana_class {
+  public static void main(String[] args){
+    
+    //(overloaded method) ayný iþi faklý veri tiplerinde
+    //yapýyorlarsa o durumlarda ayný isimde methodlar kullanýlabilir.
+    
+    Integer[] sayilar = {1,2,3,4};
+    Character[] harfler = {'a','b','c','d'};
+    
+    ekranaYaz(sayilar);
+    ekranaYaz(harfler);
+    
+  }
+  public static void ekranaYaz(Integer[] i){
+    for (Integer y: i)
+      System.out.printf("%s ", y);
+    System.out.println();
+  }
+  public static void ekranaYaz(Character[] i){
+    for (Character y: i)
+      System.out.printf("%s ", y);
+    System.out.println();
+  }

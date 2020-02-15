@@ -1,0 +1,38 @@
+import java.util.*;
+class ana_class{
+    public static void main(String args[]){
+	//karakter dizisini oluþtur ve Listtenin içerisine at
+	Character[] meyve1 ={'k','i','v','i'};
+	List<Character> liste1 = Arrays.asList(meyve1); //listi diziye çevir.
+
+	System.out.println("Meyvenin Adý : ");
+	output(liste1);
+	
+	//tersine çevir ve ekrana yaz
+	Collections.reverse(liste1);
+	System.out.println("Testten yazýlýþý: ");
+	output(liste1);
+
+	//Yeni bir dizi ve liste tanýmla
+	Character[] meyve2 = new Character[4];
+	List<Character> liste2 = Arrays.asList(meyve2);
+
+	//liste1 deki verileri liste2 ye atarak kopyalama
+	Collections.copy(liste2,liste1);
+
+	System.out.println("Liste2'nin kopyalandýktan Sonraki hali: ");
+	output(liste2);
+
+	// liste 1 i X harfi ile doldur eski veriler silinecektir.
+	Collections.fill(liste1, 'X');
+	System.out.println("Listeyi X harfi ile doldurduktan sonraki hali: ");
+	output(liste1);
+    }
+    
+    // output methodunun içi
+    public static void output(List<Character> thelist){
+	for(Character thing: thelist)
+	    System.out.printf("%s ",thing);
+	System.out.println();
+    }
+}

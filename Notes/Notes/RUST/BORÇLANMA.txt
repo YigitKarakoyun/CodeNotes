@@ -1,0 +1,5 @@
+use std;
+let mut a = 5;
+let b;
+
+b = &a;

@@ -1,0 +1,13 @@
+//----------------------------STANDART INPUT OUTPUT2---------------------------
+#include <iostream>  
+using namespace std;  
+int main( ) {  
+   int age;  
+   cout << "Enter your age: ";  
+   cin >> age;  
+   cout << "Your age is: " << age << endl;  
+}
+  
+//----------------------------OUTPUT2-------------------------------------------
+Enter your age: 22
+Your age is: 22

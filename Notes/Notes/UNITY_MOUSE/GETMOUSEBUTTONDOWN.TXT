@@ -1,0 +1,5 @@
+//FAREYLE SOLA TIKLANIRSA
+if (Input.GetMouseButtonDown(0))
+{
+
+}

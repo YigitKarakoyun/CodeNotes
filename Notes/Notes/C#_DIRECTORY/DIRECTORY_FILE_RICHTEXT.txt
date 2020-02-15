@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace projeNot
+{
+   class DosyaIslemleri
+   {
+//---------------------- DOSYA RICHTEXTTEN YAZMA ----------------------------
+      public void writeRichTexttenDosyayaYaz(RichTextBox richText, string dosyaTamYolu){
+            try
+            {
+                StreamWriter Yaz = new StreamWriter(dosyaTamYolu);
+                for (int i = 0; i < richText.Lines.Length; i++)
+                {
+                    Yaz.WriteLine(richText.Lines[i]);
+                }
+                Yaz.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("HATA: " + ex.Message);
+            }
+        }
+//----------------------- DOSYAYA YAZMA--------------------------------------
+        public void writeDosyayaMetinYaz(string metin, string dosyaTamYolu)
+        {
+            try
+            {
+                StreamWriter Yaz = new StreamWriter(dosyaTamYolu);
+                Yaz.WriteLine(metin);
+                Yaz.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+//------------------------- METIN DOSYASI OKUMA---------------------------------
+        public string getDosyadanOku(string dosyaTamYolu)
+        {
+            string temp = "";
+            FileStream fs = new FileStream(dosyaTamYolu, FileMode.Open, FileAccess.Read);
+            StreamReader sw = new StreamReader(fs);
+            string yazi = sw.ReadLine();
+            while (yazi != null)
+            {
+                yazi = sw.ReadLine();
+
+            }
+
+            sw.Close();
+            fs.Close();
+
+            return temp;
+        }
+}

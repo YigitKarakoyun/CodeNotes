@@ -1,0 +1,16 @@
+"iostream" It is used to define the cout, cin and cerr objects, which correspond to standard output stream, standard input stream and standard error stream, respectively.
+
+"iomanip" It is used to declare services useful for performing formatted I/O, such as setprecision and setw.
+
+"fstream" It is used to declare services for user-controlled file processing.
+
+//----------------------------STANDART INPUT OUTPUT1---------------------------
+#include <iostream>  
+using namespace std;  
+int main( ) {  
+   char ary[] = "Welcome to C++ tutorial";  
+   cout << "Value of ary is: " << ary << endl;  
+}  
+
+//----------------------------OUTPUT1------------------------------------------
+Value of ary is: Welcome to C++ tutorial

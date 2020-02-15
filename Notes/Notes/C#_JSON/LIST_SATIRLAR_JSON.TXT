@@ -1,0 +1,13 @@
+string masaustu = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+public void setDosyaya_SatirSatirYazar(List<Dil> dil, string dosyaIsim)
+{
+    string yeniYol = masaustu + dosyaIsim + ".json";
+    File.WriteAllText(yeniYol, "");
+
+    foreach (Dil item in dil)
+    {
+    	string tempString = JsonConvert.SerializeObject(item)+"\n";
+        File.AppendAllText(yeniYol, tempString);
+        //satýr satýr yaz ekle
+    }
+}

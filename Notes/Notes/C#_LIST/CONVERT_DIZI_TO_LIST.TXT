@@ -1,0 +1,9 @@
+//DIZIYI LISTEYE ÇEVÝRME
+string[] dizi = new string[3];
+dizi[0] = "Ayþe";
+dizi[1] = "Fatma";
+dizi[2] = "Pakize";
+ 
+//diziyi listeye aþaðýdaki gibi çevirebilirsiniz.
+List<string> isimler = new List<string>(dizi);
+ 

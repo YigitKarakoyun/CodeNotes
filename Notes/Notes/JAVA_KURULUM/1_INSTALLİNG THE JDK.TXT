@@ -1,0 +1,28 @@
+JDK Download
+
+java.sun.com
+Java SE (Standart Editation)
+
+Ýþletim Sistemi Örnek:
+Windows iþletim sistemi için
+32Bit Windows kullananlar x84
+64Bit Windows kullananlar x86 olan dosyayý indirmesi gerekiyor.
+
+1-) jdk dizinini kopyala
+Örnek:
+C:\Program Files\Java\jdk versiyonu\bin
+
+2-) jdk’nýn çalýþmasý için yeni Path oluþtur
+
+My Computer->Control Panel->
+System and Maintance->Advanced System Settings->
+Advanced->Enviroment Variable->
+New User Variable->
+Variable name = Path
+Variable value = Kopyalanan jdk dizinini yapýþtýr.
+Ok ile ekranlarý kapat.
+
+3-) Search->cmd (Ms Dos)
+
+javac (Java Compiler) yüklenmiþse
+javac komutlarý cmd ekranýnda listelenecektir.

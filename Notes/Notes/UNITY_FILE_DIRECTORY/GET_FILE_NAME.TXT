@@ -1,0 +1,71 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+public class _getFileLocations : MonoBehaviour
+{
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+    FileInfo[] Directory(string path = @"c:\windows")
+    {
+        //FileInfo tipinden  di.GetFiles methodu, bize FileInfo tipinden bir dizi dönüyor.
+        return new DirectoryInfo(path).GetFiles();
+    }
+
+    List<string> getNameList(string path = @"c:\windows")
+    {
+        List<string> temp = new List<string>();
+
+        //foreach döngümüzle fgFiles içinde dönüyoruz.
+        foreach (FileInfo file in Directory(path))
+        {
+            //fi.Name bize dosyanýn adýný dönüyor. Fi.FullName ise bize dosyasýnýn dizin bilgisini döner.
+            temp.Add(file.Name);
+        }
+        return temp;
+    }
+    List<string> getFullNameList(string path = @"c:\windows")
+    {
+        List<string> temp = new List<string>();
+
+        //foreach döngümüzle fgFiles içinde dönüyoruz.
+        foreach (FileInfo file in Directory(path))
+        {
+            //fi.Name bize dosyanýn adýný dönüyor. fi.FullName ise bize dosyasýnýn dizin bilgisini döner.
+            temp.Add(file.FullName);
+        }
+        return temp;
+    }
+    void printFullNameList(string path = @"c:\windows")
+    {
+        FileInfo[] file = Directory(path);
+        List<string> temp = new List<string>();
+
+        //foreach döngümüzle fgFiles içinde dönüyoruz.
+        foreach (FileInfo fi in file)
+        {
+            //fi.Name bize dosyanýn adýný dönüyor. //fi.FullName ise bize dosyasýnýn dizin bilgisini döner.
+            Debug.Log(fi.FullName);
+        }
+    }
+    void printNameList(string path = @"c:\windows")
+    {
+        FileInfo[] file = Directory(path);
+        List<string> temp = new List<string>();
+
+        //foreach döngümüzle fgFiles içinde dönüyoruz.
+        foreach (FileInfo fi in file)
+        {
+            //fi.Name bize dosyanýn adýný dönüyor. //fi.FullName ise bize dosyasýnýn dizin bilgisini döner.
+            Debug.Log(fi.Name);
+        }
+    }
+}

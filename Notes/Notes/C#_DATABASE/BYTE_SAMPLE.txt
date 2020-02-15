@@ -1,0 +1,31 @@
+public void Get_Finger_print()
+{
+    try
+    {
+        using (SqlConnection thisConnection = new SqlConnection(@"Data Source=" + System.Environment.MachineName + "\\SQLEXPRESS;Initial Catalog=Image_Scanning;Integrated Security=SSPI "))
+        {
+            thisConnection.Open();
+            string query = "select pic from Image_tbl";// where Name='" + name + "'";
+            SqlCommand cmd = new SqlCommand(query, thisConnection);
+            byte[] image =(byte[]) cmd.ExecuteScalar();
+            Image newImage = byteArrayToImage(image);
+            Picture.Image = newImage;
+            //return image;
+        }
+    }
+    catch (Exception) { }
+    //return null;
+}
+
+
+public Image byteArrayToImage(byte[] byteArrayIn)
+{
+    try
+    {
+        MemoryStream ms = new MemoryStream(byteArrayIn,0,byteArrayIn.Length);
+        ms.Write(byteArrayIn, 0, byteArrayIn.Length);
+        returnImage = Image.FromStream(ms,true);//Exception occurs here
+    }
+    catch { }
+    return returnImage;
+}

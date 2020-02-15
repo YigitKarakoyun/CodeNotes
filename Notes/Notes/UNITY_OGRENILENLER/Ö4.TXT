@@ -1,0 +1,41 @@
+Tam Altýn Png arat
+Audiocity
+
+GetComponent<Animator>().Play(0);
+
+Animation aþaðýsýnda curves var 
+
+Sabit hýz için saðla týkla auto
+
+
+assets - import package - Environment
+sand yaz grass , grass hill
+
+assets - import package - characters
+first person controller
+
+Asset Store zombie arat indir
+
+Camera - Clear Flags
+	Skybox Gökyüzü
+	Solid Color Tek bir renk
+	Depth Only Gökyüzü yok demek
+
+	Culling Mask
+	Layerlarýmýz Katmanlarýmýz
+
+	Field Of View Kamera Açýsýný belirler. hep 60 olacak
+	
+	Near ne kadar yakýndaki
+	Far ne kadar uzaktaki nesneleri görecek
+	
+	Viewport Rect 0, 0 sol alt köþe
+
+	Depth 1 den fazla kamera kullandýðýmýzda kullanýyoruz. Katmanlar gibi düþünebiliriz
+
+Light
+	Intensity þiddeti
+	Point Light: 
+	Spot  Light: el feneri
+
+Güneþ Ay

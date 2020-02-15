@@ -1,0 +1,19 @@
+//-----------------------------C++ Infinite For Loop--------------------------
+
+#include <iostream>  
+using namespace std;  
+   
+int main () {  
+        for (; ;)    
+          {    
+                  cout<<"Infinitive For Loop";    
+          }    
+    }    
+Output:
+
+Infinitive For Loop
+Infinitive For Loop
+Infinitive For Loop
+Infinitive For Loop
+Infinitive For Loop
+ctrl+c

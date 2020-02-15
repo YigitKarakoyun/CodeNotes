@@ -1,0 +1,15 @@
+void Start()
+{
+    PhotonNetwork.ConnectUsingSettings("0.1");
+}
+
+void OnJoinedLobby()
+{
+    Debug.Log("LOBBY ERÝÞÝLDÝ");
+    PhotonNetwork.CreateRoom("Oda1");
+    //PhotonNetwork.JoinOrCreateRoom("Oda1",null,TypedLobby.Default);
+}
+void OnCreatedRoom()
+{
+    Debug.Log("ODA OLUÞTURULDU");
+}

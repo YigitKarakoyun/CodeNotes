@@ -1,0 +1,9 @@
+class dizi_tablo{
+    public static void main(String[] args){
+	System.out.println("Sýrasý\tDegeri");
+	int a[] = {12,45,32,12,18,54,2};
+	for (int sayac=0;sayac<a.length;sayac++){
+	    System.out.println(sayac + "\t" + a[sayac]);
+	}
+    }
+}

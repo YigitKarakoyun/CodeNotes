@@ -1,0 +1,80 @@
+//------------------------- YAZDIRMA METODLARI--------------------------------
+    public void printCocukYok() { Debug.LogWarning("NULL ÇOCUĞUM YOK DEMEK"); }
+    public void printCocukYok(object temp) { if (temp == null) printCocukYok(); }
+    public void printAyrac(object temp) { Debug.Log("----------------------------------------------------------" + temp.ToString() + "--------------------------------------------------------------"); }
+    public void printAyrac() { Debug.Log("------------------------------------------------------------------------------------------------------------------------"); }
+    public void print(object temp) { Debug.Log(temp.ToString()); }
+    
+    //------------------------------------------ ÇOCUKLAR YAZDIRMAK---------------------------------------------------
+    public void printCocuklar(GameObject[] cocuklar)
+    {
+        //if (getBosMu(cocuklar)){ printCocukYok(); return;}
+        if (getBosMu(cocuklar)) { return; }
+        foreach (GameObject item in cocuklar)
+        {
+            print("ÇOCUK: " + item.ToString());
+        }
+    }
+    //------------------------------------------ ÇOCUKLAR YAZDIRMAK--------------------------------------------------
+    public void printCocuklar(GameObject nesne)
+    {
+        //if (getBosMu(nesne)) { return; }
+        if (getBosMu(nesne)) { printNull(); return; }
+        printAyrac("NESNE: " + nesne.name + " ÇOCUKLARI");
+        printCocuklar(getCocuklar_Dizi(nesne));
+    }
+    //------------------------------------------ ÇOCUK SAYISI-----------------------------------------------------------------
+    public void printCocukSayisi(GameObject nesne) { print("TEMEL NESNE: " + nesne.name + " ÇOCUK SAYISI: " + getCocukSayisi(nesne)); }
+    public void printCocugun_CocukSayisi(GameObject nesne) {
+        printAyrac(nesne.name+"NESNESİNİN ÇOCUKLARIN ÇOCUK SAYILARI");
+        foreach (GameObject item in getCocuklar_Dizi(nesne))
+        {
+            print(" ÇOCUK SAYISI: " + getCocukSayisi(item) + "-->" + item);
+        }
+    }
+    //------------------------------------------ ÇOCUKLARININ ÇOCUKLARINA ERİŞMEK--------------------------
+    public void printCocuklarin_Cocuklari(GameObject nesne)
+    {
+        if (getBosMu(nesne)) { Debug.LogWarning("NESNE NULL"); return; }
+        printAyrac("NESNE: "+nesne.name+ " ÇOCUKLARIN ÇOCUĞU");
+
+        GameObject [] cocuklar = getCocuklar_Dizi(nesne);
+
+        //if (getBosMu(cocuklar)) { printCocukYok(); return; }
+        if (getBosMu(cocuklar)) { return; }
+        foreach (GameObject cocuk in cocuklar)
+        {
+            GameObject[] torunlar = getCocuklar_Dizi(cocuk);
+            if (getBosMu(torunlar)) { continue; }
+            foreach (GameObject torun in torunlar)
+            {
+                printCocuklar(torun);
+            }
+        }
+    }
+    //------------------------------------------ ÇOCUKLAR DÖNDÜRÜR----------------------------------------------------
+    public GameObject[] getprintCocuklarr(GameObject nesne)
+    {
+        if (getBosMu(nesne)) { printNull(); return null; }
+        printAyrac("NESNE: " + nesne.name + " ÇOCUKLARI");
+        GameObject[] dizi = getCocuklar_Dizi(nesne);
+        printCocuklar(dizi);
+        return dizi;
+    }
+    
+    //------------------------------------------ NULL YAZDIRMA--------------------------------------------------------------
+    private void printNull(){ Debug.LogWarning("NESNE NULL");}
+
+    //------------------------------------------ ÇOCUKLAR YAZDIRMAK---------------------------------------------------
+    public void printCocuklar(List<GameObject> cocuklar)
+    {
+        printAyrac("ÇOCUKLAR");
+        foreach (GameObject item in cocuklar)
+        {
+            print("ÇOCUK: " + item.ToString());
+        }
+    }
+    #endregion
+
+
+

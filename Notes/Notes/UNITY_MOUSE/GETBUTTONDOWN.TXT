@@ -1,0 +1,6 @@
+//FARE BASILIRSA
+void Update(){
+if (Input.GetButtonDown("Fire1")){
+            
+	
+}

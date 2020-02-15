@@ -1,0 +1,5 @@
+//------------------------ UYGULAMA YENIDEN BASLATIR----------------------------
+private void buttonRefresh_Click(object sender, EventArgs e)
+{
+    Application.Restart();
+}

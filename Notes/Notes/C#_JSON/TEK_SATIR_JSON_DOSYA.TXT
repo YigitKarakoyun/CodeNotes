@@ -1,0 +1,6 @@
+string masaustu = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+private void setDosyaya_Yazar(string dosyaIsim, string json_metin)
+{
+    string yeniYol = masaustu + dosyaIsim + ".json";
+    File.WriteAllText(yeniYol, json_metin);
+}

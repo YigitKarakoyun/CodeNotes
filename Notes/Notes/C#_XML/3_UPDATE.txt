@@ -1,0 +1,23 @@
+//-------------------------------XML UPDATE-----------------------------------
+XDocument xDoc = XDocument.Load(@"..\..\Data\rehber.xml");
+//Xml dosyamýza eriþip yükleme iþlemini gerçekleþtiriyoruz.
+
+//Oluþturduðumuz Root elementine XML dökümanýnda ki 
+//root elementini seçmesini saðlýyoruz.
+XElement rootElement = xDoc.Root;
+
+//Root Tagýmýz içindeki rehber Elementlerinde dönmeye baþlýyoruz.
+foreach (XElement rehberimiz in rootElement.Elements())
+{
+   //attributes id si 1 olan veri yakalýyoruz Xml Dosyamýzda Fatih Olan kiþi.
+   if (rehberimiz.Attribute("id").Value == "1") 
+   {
+      //attributes id si 1 olan anýl adlý kiþiyi selim yap.
+      rehberimiz.Element("kisi_Adý").Value = "Selim"; 
+      
+      break; 
+   }
+}
+
+//Yaptýðýmýz iþlemi kayýt ediyoruz.
+xDoc.Save(@"..\..\Data\rehber.xml");

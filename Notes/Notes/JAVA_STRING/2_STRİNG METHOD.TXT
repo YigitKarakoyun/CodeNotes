@@ -1,0 +1,16 @@
+public class ana_class{
+    public static void main(String[] args){
+	String a = "elma";
+	String b = "murat";
+	String c = "MURAT";
+	System.out.println(a.length());
+	System.out.println(b.toUpperCase());
+	System.out.println(c.toLowerCase());
+
+	if(a.equals("elma")){ System.out.println("a deðiþkeninde elma var!");}
+	if(b.equals(c)){ System.out.println("Murat isimleri eþleþti!");}
+	if(b.equalsIgnoreCase(c)){
+	    System.out.println("b ve c deðiþkenindeki yazýlar ayný ,case durumu var");
+	}
+    }
+}

@@ -1,0 +1,32 @@
+//-------------------- SPLIT İLE 2 YE AYIRMA------------------------------------
+string[] tempStringDizi = tempButon.Tag.ToString().Split(',');
+
+//-------------------- TAG DEKİ 2Lİ INDEKS BİLGİSİNİ KULLANMA-------------------
+string[] tempStringDizi = tempButon.Tag.ToString().Split(',');
+int tempString1 = int.Parse(tempStringDizi[0]);
+int tempString2 = int.Parse(tempStringDizi[1]);
+
+//-------------------- BOŞLUKLARI SİLME---------------------------------------
+string temp = metin.Trim();
+
+//-------------------- BOŞLUKLARI SİLİNMİŞ METİN ------------------------------
+private string getTextTemizString(string temp) { 
+return temp.Trim().Replace(" ", string.Empty);
+}
+
+//-------------------- RAM METİN KOPYALAMA-------------------------------------
+string temp = richTextBox1.Text.Trim();
+Clipboard.SetText(temp);
+
+
+
+
+
+
+
+
+
+
+
+
+

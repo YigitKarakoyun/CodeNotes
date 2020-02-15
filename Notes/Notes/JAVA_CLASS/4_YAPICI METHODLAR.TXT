@@ -1,0 +1,22 @@
+class ana{
+    public static void main(String[] args){
+	tuna digerObject = new tuna("Ayse");
+	tuna digerObject2 = new tuna("Fatma");
+	tuna digerObject3 = new tuna("Hayriye");
+	digerObject.saying();
+	digerObject2.saying();
+	digerObject3.saying();
+    }
+}
+
+
+public class tuna{
+    private String KizinAdi;
+
+    public tuna(String name){ KizinAdi =name; }
+    public String getName() { return KizinAdi; }
+
+    public void saying() {
+	System.out.printf("Senin ilk kýzarkadasin %s \n", getName());
+    }
+}

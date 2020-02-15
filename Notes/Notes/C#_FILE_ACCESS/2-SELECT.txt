@@ -1,0 +1,21 @@
+//--------------------------------- SELECT ------------------------------------
+//----------------------DATAREADER KULLANARAK SELECT SORGUSU-------------------
+
+private void buttonSelect_Click(object sender, EventArgs e)
+{
+   OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Application.StartupPath + "//access_db.accdb;Persist Security Info = False; ");
+   OleDbCommand com = new OleDbCommand("SELECT ID, Ad, Soyad, Yas FROM Kisiler", conn);
+
+   conn.Open();
+   listBox2.Items.Clear();
+   OleDbDataReader reader = com.ExecuteReader();
+   while (reader.Read())
+   {
+      string id = reader["id"].ToString();
+      string ad = (string)reader["Ad"];
+      string soyad = (string)reader["Soyad"];
+      listBox2.Items.Add(id+"-Adı: " + ad + " Soyadı: " + soyad);
+   }
+   conn.Close();
+}
+

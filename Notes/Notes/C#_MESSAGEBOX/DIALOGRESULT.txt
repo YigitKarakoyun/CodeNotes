@@ -1,0 +1,10 @@
+//-------------------------------------------------------------------------------
+//------------------- SİLMEK İSTEDİĞİNİZE EMİN MİSİNİZ? -------------------------
+DialogResult result = MessageBox.Show("Silmek istediğinize emin misiniz!", "Silme İşlemi", MessageBoxButtons.OKCancel);
+if(result==DialogResult.OK) silKlasor(button);
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+class do_while_dongusu{
+    public static void main(String[] args){
+	int sayac=0;
+	do {
+	    System.out.println(sayac);
+	    sayac++;
+	}while (sayac <=10);
+    }
+}

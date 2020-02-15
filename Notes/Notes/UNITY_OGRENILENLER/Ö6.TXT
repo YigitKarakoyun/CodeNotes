@@ -1,0 +1,27 @@
+Overlay Ui baðlý menuler sabit kalýyor
+World ise menuler etkileniyor
+
+
+Ui image yuvarlak köþeler
+
+Event Trigger ekleyip card nesnesini baðlayýp Kullanýlabilir Drag olur
+
+OnDrag nesnenin drag olamasýdýr. transform.position = eventdata.position ile taþýnýr
+
+IBeginDragHandler,
+IDragHandler,	
+IEndDragHandler
+
+Child Force Expand: width kartlarý yayar boyutunu deðiþtirmez(Yatay olarak)
+
+Layout element script: Kesin kurallarýnýn olduðunu söyler
+	Flexible Width = 1 esnek 0 ise esnek deðil
+
+Prefered Width: Tercih edilen geniþlik(Tercih eder) flexible 0 ise zorunlu kýlmýþ olur
+
+GetComponent<CanvasGroup>() ýþýn çarpsýn mý demek
+IBeginDragHandler yaparsýn nesneyi taþýmana izin verir. GetComponent<CanvasGroup>().blocksRaycasts = false;
+IEndDragHandler yaparsýn nesneyi ileride taþýmana izin verir. GetComponent<CanvasGroup>().blocksRaycasts = true;
+
+sprite ui iþe yaramaz
+image kullanmak lazým

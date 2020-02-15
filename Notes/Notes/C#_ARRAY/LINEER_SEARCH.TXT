@@ -1,0 +1,18 @@
+//-----------------------ARRAY DOÐRUSAL ARAMA-------------------------------------
+
+string[] AracListe = new string[] { "Opel", "Peugeot", "Mercedes", "Ferrari", "Reno", "Fiat", "Golf" };
+bool Durum = false;
+for (int i = 0; i < AracListe.Count(); i++)
+{
+   if (AracListe.ToUpper() == txt_Ara.Text.ToUpper())
+   {
+      // büyük küçük harf farkýndan dolayý olsa bile yok diyeceðinden 
+      //iki tarafýda büyük harf olarak deðiþtirdik.
+      Durum = true;
+      break;
+    }
+}
+if (Durum == true)
+  MessageBox.Show("Aradýðýnýz araç listede mevcut.");
+else
+  MessageBox.Show("Aradýðýnýz araç listede mevcut deðil.");

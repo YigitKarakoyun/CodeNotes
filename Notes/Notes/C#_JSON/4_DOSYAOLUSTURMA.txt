@@ -1,0 +1,6 @@
+//--------------------------JSON YAZDIRMA-------------------------------------
+//JSON STRING OLUSTURMA
+string result = JsonConvert.SerializeObject(student);
+string yol = @"student.json";
+
+File.WriteAllText(yol,result);

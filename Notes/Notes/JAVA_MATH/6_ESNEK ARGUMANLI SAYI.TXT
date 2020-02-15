@@ -1,0 +1,11 @@
+class deneme{
+public static void main(String[] args){
+    System.out.println(ortalama(43,34,45,56,7));
+}
+public static int ortalama(int...sayilar){
+    int toplam=0;
+    for(int x:sayilar)
+        toplam+=x;
+    return toplam/sayilar.length;
+    }
+}

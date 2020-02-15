@@ -1,0 +1,32 @@
+//-----------------------------------------------------------------------------
+//------------------------- DOSYA YOLUNDA YOKSA KOPYALA------------------------
+if (!File.Exists(dosyaYol)) File.Copy(itemYol, dosyaYol);
+
+//------------------------- DOSYA SİLME----------------------------------------
+File.Delete(dosyaYol);
+
+// ------------------------ DOSYA YOKSA OLUŞTURUR------------------------------ 
+public void createDosyaOlustur(string dosyaTamYolu)
+{
+     if (!File.Exists(dosyaTamYolu)) File.Create(dosyaTamYolu).Close();
+}
+
+//------------------------- DOSYA OLUŞTURUR ZORLA------------------------------ 
+public void createDosyaOlusturUzerine(string dosya_yolu)
+{
+    File.Create(dosya_yolu).Close();
+}
+
+//------------------------- DOSYA KOPYALAMA------------------------------------
+public void copyDosyayiKopyala(string yol, string hedef) { File.Copy(yol, hedef); }
+
+//------------------------- DOSYA VAR MI KONTROLÜ------------------------------
+public bool getDosyaVarMi(string yol) { return File.Exists(yol); }
+
+
+
+
+
+
+
+

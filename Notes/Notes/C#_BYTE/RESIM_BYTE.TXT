@@ -1,0 +1,16 @@
+byte[] dizi;
+using (var bitmap = new Bitmap(16, 16))
+{
+    //örnek bir bitmap oluþturuyoruz
+    using (var graphics = Graphics.FromImage(bitmap))
+    {
+        graphics.DrawString("C", new Font("Arial", 6), Brushes.Red, 0F, 0F);
+    }
+
+    // çevirme
+    using (var stream = new MemoryStream())
+    {
+        bitmap.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+        dizi = stream.ToArray();
+    }
+}

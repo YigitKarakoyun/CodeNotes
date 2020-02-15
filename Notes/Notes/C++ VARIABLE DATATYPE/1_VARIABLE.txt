@@ -1,0 +1,14 @@
+int x;    
+float y;    
+char z;  
+
+int x=5,b=10;  //declaring 2 variable of integer type    
+float f=30.8;    
+char c='A';
+
+int a;    
+int _ab;    
+int a30;   
+
+
+

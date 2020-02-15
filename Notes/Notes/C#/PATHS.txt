@@ -1,0 +1,14 @@
+//------------------------- MASAÜSTÜ KONUM---------------------------------------
+string masaustu = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+//------------------------- EXE KLASORU KONUMUNU BELIRTIR------------------------ 
+string exeYolu = Application.StartupPath;
+
+//------------------------- EXENİN YANINDAKİ BİR KLASORU KONUMUNU BELIRTIR-------
+string klasorAdi = "yeniKlasor";
+string exeYolu = Application.StartupPath+"\\"+klasorAdi;
+
+
+
+
+

@@ -1,0 +1,33 @@
+import java.util.*;
+class ana_class{
+    public static void main(String args[]){
+
+	//String diziyi ve ArrayListti tanýmla.
+	String [] meyveler = {"kiraz","muz","karpuz","kavun"};
+	List<String> liste1 = Arrays.asList((meyveler));
+
+	ArrayList<String> liste2 = new ArrayList<String>();
+	liste2.add("elma");
+	liste2.add("kivi");
+	liste2.add("portakal");
+
+	for(String x: liste2) System.out.printf("%s ",x); //dizi
+	// meyveler dizisinde bulunan elemanlarý liste2 nin içerisine ekle.
+
+	System.out.println("\n");
+	Collections.addAll(liste2,meyveler);
+
+	for(String x: liste2) System.out.printf("%s ",x); //dizi
+	//frequency liste içerisinde aranan elemanýn kaç tane olduðu 
+	//bilgisini döndürür.
+	
+	System.out.println(Collections.frequency(liste2, "elma"));
+	boolean tof = Collections.disjoint(liste1, liste2);
+	System.out.println(tof);
+	
+	//ortak kayýt varmý yokmu? liste2 nin içerisine liste1 eklendiði için
+	// Collections.addAll(liste2,meyveler); kodu ile ortak kayýt var.
+	if(tof) System.out.println("2 liste arasýnda ortak bir kayýt yok");
+	else System.out.println("2 liste arasýnda ortak kayýt var!");
+    }
+}

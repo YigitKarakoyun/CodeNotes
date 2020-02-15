@@ -1,0 +1,8 @@
+//---------------------JSON TEK SATIRLIK STRING OLUSTURMA(SERIALIZE)-----------
+string result = JsonConvert.SerializeObject(student);
+
+
+//---------------------JSON STRINGI JSON UZANTILI DOSYA OLARAK YAZMA-----------
+File.WriteAllText(@"student.json",result);
+
+//Nuget paketlerinden Newtonsoft.Json dll yüklenmesi lazým

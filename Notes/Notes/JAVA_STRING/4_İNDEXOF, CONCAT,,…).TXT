@@ -1,0 +1,23 @@
+import javax.swing.JFrame;
+class ana_class{
+    public static void main(String args[]){
+	String s = "merhabadostlarmerhababizgeldik";
+	String a = "Murat ";
+	String b = "Demir";
+	String c = "     Merhaba Murat      ";
+	System.out.println(s.indexOf('m'));  
+	//Verilen Stringin içerisinde kaçtane m harfi olduðunu kelime sýrasý ile listeleme.
+	System.out.println(s.indexOf('k',5)); //ilk beþ karakteri göz ardý ondan sonra ara
+	System.out.println(s.indexOf('x')); // EÐERdeðer yoksa -1 deðeri döndürür.
+	System.out.println(s.indexOf("mer")); // mer kelimesini bulma.
+	System.out.println(s.indexOf("mer",10)); //ilk 10 deðeri boþver sonrasýnda ara.
+	System.out.println(a+ " " + b);
+	System.out.println(a.concat(b));
+	System.out.println(a.replace('M','X')); 
+	// Murat içerisindeki M harfini F harfi olarak deðiþtir.
+	System.out.println(b.toLowerCase());
+	System.out.println(b.toUpperCase());
+	System.out.println(b);
+	System.out.println(c.trim());
+    }
+}

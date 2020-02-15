@@ -1,0 +1,69 @@
+The pointer in C++ language is a variable, it is also known as locator or indicator that points to an address of a value.
+
+Cpp Pointers 1
+Advantage of pointer
+
+1) Pointer reduces the code and improves the performance, it is used to retrieving strings, trees etc. and used with arrays, structures and functions.
+
+2) We can return multiple values from function using pointer.
+
+3) It makes you able to access any memory location in the computer's memory.
+
+Usage of pointer
+
+There are many usage of pointers in C++ language.
+
+1) Dynamic memory allocation
+
+In c language, we can dynamically allocate memory using malloc() and calloc() functions where pointer is used.
+
+2) Arrays, Functions and Structures
+
+Pointers in c language are widely used in arrays, functions and structures. It reduces the code and improves the performance.
+
+Symbols used in pointer
+Symbol	Name	Description
+& (ampersand sign)	Address operator	Determine the address of a variable.
+∗ (asterisk sign)	Indirection operator	Access the value of an address.
+Declaring a pointer
+The pointer in C++ language can be declared using ∗	(asterisk symbol).
+
+int ∗   a; //pointer to int    
+char ∗  c; //pointer to char    
+Pointer Example
+Let's see the simple example of using pointers printing the address and value.
+
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+int number=30;    
+int ∗   p;      
+p=&number;//stores the address of number variable    
+cout<<"Address of number variable is:"<<&number<<endl;    
+cout<<"Address of p variable is:"<<p<<endl;    
+cout<<"Value of p variable is:"<<*p<<endl;    
+   return 0;  
+}  
+Output
+
+Address of number variable is:0x7ffccc8724c4
+Address of p variable is:0x7ffccc8724c4
+Value of p variable is:30  
+Pointer Program to swap 2 numbers without using 3rd variable
+#include <iostream>  
+using namespace std;  
+int main()  
+{  
+int a=20,b=10,∗p1=&a,∗p2=&b;    
+cout<<"Before swap: ∗p1="<<∗p1<<" ∗p2="<<∗p2<<endl;    
+∗p1=∗p1+∗p2;    
+∗p2=∗p1-∗p2;    
+∗p1=∗p1-∗p2;    
+cout<<"After swap: ∗p1="<<∗p1<<" ∗p2="<<∗p2<<endl;    
+   return 0;  
+}  
+Output
+
+Before swap: ∗p1=20 ∗p2=10
+After swap: ∗p1=10 ∗p2=20

@@ -1,0 +1,23 @@
+//--------------------------------XMLDELETE------------------------------------------
+XDocument xDoc = XDocument.Load(@"..\..\Data\rehber.xml");
+//Xml dosyamıza erişip yükleme işlemini gerçekleştiriyoruz.
+
+//Oluşturduğumuz Root elementine XML dökümanında ki root elementini seçmesinisağlıyoruz.
+XElement rootElement = xDoc.Root;
+
+
+//Root Tagımız içindeki rehber Elementlerinde dönmeye başlıyoruz...
+foreach (XElement rehberimiz in rootElement.Elements())
+{
+   //attributes id si 2 olan elementi yakalıyoruz Xml Dosyamızda Seyfi Olan kişi...
+   if (rehberimiz.Attribute("id").Value == "2") 
+   {
+       rehberimiz.Remove();
+       //attributes id si 2 olan elementi Remove metodu ile siliyoruz.
+   }
+}
+
+//Yaptığımız işlemi kayıt ediyoruz.
+xDoc.Save(@"..\..\Data\rehber.xml");
+            
+

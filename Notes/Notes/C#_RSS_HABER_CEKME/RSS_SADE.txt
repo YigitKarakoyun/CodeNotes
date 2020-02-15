@@ -1,0 +1,15 @@
+//using System.Xml;
+//http://dosyalar.hurriyet.com.tr/rss/
+
+string haberBasliklari = "";
+XmlTextReader xmlTextReader = new XmlTextReader("http://www.hurriyet.com.tr/rss/anasayfa");
+while(xmlTextReader.Read())
+{
+   if (xmlTextReader.Name == "title")
+   {
+       haberBasliklari += xmlTextReader.ReadString();
+   }
+}
+
+
+

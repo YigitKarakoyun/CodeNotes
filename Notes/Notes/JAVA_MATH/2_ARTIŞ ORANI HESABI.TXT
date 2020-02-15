@@ -1,0 +1,11 @@
+class faiz_hesabi{
+public static void main(String[] args){
+    double miktar;
+    double taban = 10000;
+    double oran = .01;
+    for (int gun=1; gun <=20;gun++){
+        miktar = taban*Math.pow(1+oran,gun);
+        System.out.println(gun + ". sonra  " + miktar);
+        }
+    }
+}

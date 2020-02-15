@@ -1,0 +1,11 @@
+class ana_class{
+public static void main(String args[]){
+    System.out.println(faktoriyel(23));
+}
+
+//Factöriyel hesabý
+public static long faktoriyel(long n){
+    if( n <=1 ) return 1;
+    else return n * faktoriyel(n-1);
+    }
+}

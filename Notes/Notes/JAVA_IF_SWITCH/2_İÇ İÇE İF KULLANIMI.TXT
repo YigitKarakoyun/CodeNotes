@@ -1,0 +1,11 @@
+class yas_hesabi{
+    public static void main(String[] args){
+	int yas= 60;
+	if (yas < 50){ System.out.println("Gencsin");}
+	else{
+	    System.out.println("Yaslisin");
+	    if (yas > 75){S ystem.out.println("Gerçekten yaslisin!"); } 
+	    else { System.out.println("Endiselenme o kadar yasli degilsin");}
+	}
+    }
+}

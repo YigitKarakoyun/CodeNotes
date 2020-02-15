@@ -1,0 +1,5 @@
+//DECIMAL TO BYTE
+decimal a = 7.5M ;
+
+var bits = decimal.GetBits(a);
+var bytelar = bits.SelectMany(i=>BitConverter.GetBytes(i)).ToArray();

@@ -1,0 +1,15 @@
+class ana{
+    public static void main(String args[]){
+	diger digerObject = new diger();
+	digerObject.simpleMessage();
+	System.out.println("\n Merhaba");
+    }
+}
+
+// Diger isimli class
+public class diger{
+    public void simpleMessage() {
+        System.out.print("Bu Diger Bir Classtýr.");
+	
+    }
+}

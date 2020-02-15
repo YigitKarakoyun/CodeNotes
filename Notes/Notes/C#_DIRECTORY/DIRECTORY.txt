@@ -1,0 +1,45 @@
+//-----------------------------------------------------------------------------
+//----------------------- KLASOR İÇİNDEKİ KLASORLER LİSTESİ--------------------
+string klasorYolu = "C:\\yeni";
+Directory.GetDirectories(klasorYolu); 
+
+//----------------------- KLASOR YOKSA OLUŞTUR---------------------------------
+strings notesYolu = Application.StartupPath + @"\Notes";
+if (!Directory.Exists(notes)){ Directory.CreateDirectory(notesYolu); }
+
+//----------------------- MASAÜSTÜNE KLASOR OLUŞTURMA--------------------------
+string klasorAdi = "Notes";
+string masaustu = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+string klasorYolu = masaustu + "\\" + klasorAdi;
+if (!Directory.Exists(klasorYolu)){ Directory.CreateDirectory(klasorYolu); 
+
+//----------------------------------------------------------------------------- 
+//------------------------ KLASOR KOMUTLARI------------------------------------
+public void createKlasorOlustur(string klasorYolu) { 
+if (Directory.Exists(klasorYolu)) return; 
+Directory.CreateDirectory(klasorYolu); 
+}
+
+public void createKlasorOlusturZorla(string klasorYolu) { Directory.CreateDirectory(klasorYolu); }
+public void deleteKlasorSil(string klasorYolu) { Directory.Delete(klasorYolu); }
+public void deleteKlasorIcindekilerleSil(string klasorYolu) { Directory.Delete(klasorYolu, true); }
+public void moveKlasorTasi(string yol, string hedef) { Directory.Move(yol, hedef); }
+public bool getKlasorVarMi(string yol) { return Directory.Exists(yol); }
+
+
+//------------------------ KLASORUN KLASORLERİNİ LİSTELEME---------------------
+public string[] getKlasorun_Klasorleri(string yol) { 
+if (!Directory.Exists(yol)) return null; 
+return Directory.GetDirectories(yol); 
+}
+
+//------------------------ KLASORUN DOSYALARINI LİSTELEME----------------------
+public string[] getKlasorun_Dosyalari(string yol) { 
+if (!Directory.Exists(yol)) return null; 
+return Directory.GetFiles(yol); }
+}
+
+
+
+
+

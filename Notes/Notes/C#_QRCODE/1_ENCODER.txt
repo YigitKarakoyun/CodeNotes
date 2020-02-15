@@ -1,0 +1,10 @@
+//----------------------------QRCODE ENCODER-----------------------------------
+//using MessagingToolkit.QRCode.Codec;
+//using MessagingToolkit.QRCode.Codec.Data;
+
+QRCodeEncoder encoder = new QRCodeEncoder();
+string tempString = textBox1.Text;
+Image image = encoder.Encode(tempString);
+
+
+

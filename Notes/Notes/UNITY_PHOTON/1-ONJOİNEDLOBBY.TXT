@@ -1,0 +1,11 @@
+void Start()
+{
+   //PhotonNetwork.autoJoinLobby = true;
+    PhotonNetwork.ConnectUsingSettings("0.1");
+}
+
+//Lobby girildi
+void OnJoinedLobby()
+{
+    Debug.Log("LOBBY ERÝÞÝLDÝ");
+}

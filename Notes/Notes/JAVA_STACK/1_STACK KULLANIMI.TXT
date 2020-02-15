@@ -1,0 +1,22 @@
+import java.util.*;
+    class ana_class{
+	public static void main(String args[]){
+	Stack<String> stack = new Stack<String>();
+	stack.push("alt");
+	printStack(stack);
+	stack.push("orta");
+	printStack(stack);
+	stack.push("üst");
+	printStack(stack);
+	stack.pop();
+	printStack(stack);
+	stack.pop();
+	printStack(stack);
+	stack.pop();
+	printStack(stack);
+    }
+    private static void printStack(Stack<String> s){
+	if(s.isEmpty())	System.out.println("Stack Boþ!");
+	else System.out.printf("%s Stak Bilgileri\n",s);
+    }
+}

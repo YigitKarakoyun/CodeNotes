@@ -1,0 +1,3 @@
+//ÝKÝSÝNÝN DE GÖREVÝ AYNI
+//PhotonNetwork.playerName = "Slayer1";
+//PhotonNetwork.player.NickName = "Slayer1";

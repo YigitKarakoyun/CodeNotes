@@ -1,0 +1,3 @@
+//-----------------------------JSON COZME DICTIONARY-----------------------------
+string result = File.ReadAllText(@"student.json");
+var dictionary = JsonConvert.DeserializeObject<IDictionary>(result);

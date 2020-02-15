@@ -1,0 +1,7 @@
+//METÝNÝ BYTE ÇEVÝRME
+var metin = "Klasik bir UTF16 c# metni,fýstýkçý þahap oðlu";
+
+var dizi32      = Encoding.UTF32.GetBytes(metin);       //  180
+var dizi16      = Encoding.Unicode.GetBytes(metin);     //   90
+var dizi8       = Encoding.UTF8.GetBytes(metin);        //   51
+var diziascii   = Encoding.ASCII.GetBytes(metin);       //   45

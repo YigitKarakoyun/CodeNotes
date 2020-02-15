@@ -1,0 +1,29 @@
+//--------------------------------XML INSERT-----------------------------------
+XDocument xDoc = XDocument.Load(@"..\..\Data\rehber.xml");
+//Xml dosyamıza erişip yükleme işlemini gerçekleştiriyoruz.
+
+XElement rootElement = xDoc.Root;
+//Oluşturduğumuz Root elementine XML dökümanında ki root elementini seçmesini sağlıyoruz.
+
+XElement newElement = new XElement("rehber");
+//Yeni bir element oluşturuyoruz.
+
+XAttribute idAttribute = new XAttribute("id", "4");
+//Elementimize attribute yani Id ataması yapıyoruz.
+
+XElement adiElement = new XElement("kisi_Adı", "Ömer Şakir");
+XElement telefonElement = new XElement("kisi_Tel", "0555*******");
+XElement emailElement = new XElement("kisi_EMail", "omer@hotmail.com");
+//Elementlerimizin verilerini oluşturmaya devam ediyoruz...
+
+newElement.Add(idAttribute, adiElement, telefonElement, emailElement); 
+//Verilerimizi rehber elementimizin içine sıralı bir şekilde ekliyoruz.
+
+rootElement.Add(newElement); 
+//Oluşturduğumuz yeni elementi root tagının içine ekliyoruz.
+
+xDoc.Save(@"..\..\Data\rehber.xml");
+//Yaptığımız işlemi kayıt ediyoruz.
+        
+
+

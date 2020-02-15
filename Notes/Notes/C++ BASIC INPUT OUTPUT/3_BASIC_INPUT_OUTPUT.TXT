@@ -1,0 +1,13 @@
+//----------------------------STANDART END LINE (endl)-------------------------
+#include <iostream>  
+using namespace std;  
+int main( ) {  
+cout << "C++ Tutorial";     
+cout << " Javatpoint"<<endl;   
+cout << "End of line"<<endl;   
+}   
+
+//----------------------------OUTPUT3------------------------------------------
+
+C++ Tutorial Javatpoint 
+End of line

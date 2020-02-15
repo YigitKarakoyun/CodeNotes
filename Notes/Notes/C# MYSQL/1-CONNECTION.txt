@@ -1,0 +1,15 @@
+private void button2_Click(object sender, EventArgs e)
+{
+  //SERVER = NOKTA ÇALIÞMIYOR
+  //MySqlConnection baglanti = 
+new MySqlConnection("Server=localhost;Database=kitaplar_veritbani;Uid=root;Pwd=;");
+   
+    MySqlConnection baglanti = 
+new MySqlConnection("Server=127.0.0.1;Database=kitaplar_veritbani;Uid=root;Pwd=;");
+    //baðlantý yolunu verdik
+
+    baglanti.Open();//baðlantýyý açtýk
+    MySqlConnection.ClearPool(baglanti);
+    MySqlConnection.ClearAllPools();//bundan önceki baðlantýlarý temizledik
+    MessageBox.Show("Kitaplar Veritabani Açýldý");
+}

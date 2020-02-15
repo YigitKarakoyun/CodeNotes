@@ -1,0 +1,6 @@
+class cok_dizi{
+    public static void main(String[] args){
+	int ilkdizi[][]={{8,9,10,11},{12,13,14,15}};  // [] ilk satýr [] ikinci sutun
+	int ikincidizi[][]={{30,31,32,33},{43},{4,5,6}};
+    }
+}

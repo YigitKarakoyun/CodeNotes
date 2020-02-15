@@ -1,0 +1,13 @@
+class diziler{
+    public static void main(String[] args){
+	int a[]= new int[10];
+	int b[] = {2,4,5,7,9};
+	a [0] = 87;
+	a [1] = 543;
+	a [9] = 65;
+	System.out.println(a[1]);
+	System.out.println(a[9]);
+	System.out.println(b[2]);
+	System.out.println(a[1]);
+    }
+}

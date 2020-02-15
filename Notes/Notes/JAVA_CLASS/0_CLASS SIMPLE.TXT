@@ -1,0 +1,6 @@
+class ana{
+    void bak(){
+	// NASIL YAPILACAK...
+	// BU MODUL ÝLE ÝLGÝLÝ ALGORÝTMA BURAYA YAZILACAK
+    }
+}

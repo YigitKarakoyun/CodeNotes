@@ -1,0 +1,2 @@
+//KÜÇÜK DOSYALARDA BYTE BYTE OKUMA
+var dizi = File.ReadAllBytes(@"c:\c\test.txt");

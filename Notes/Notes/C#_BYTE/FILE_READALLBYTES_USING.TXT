@@ -1,0 +1,20 @@
+//BÜYÜK DOSYALARDA BYTE BYTE OKUMA
+using (var stream = File.OpenRead(@"c:\c\test.txt"))
+{
+    var buffer = new byte[1024];
+
+    var tur = 0;
+    var okunanAdet = 0;
+    while(true)
+    {
+        okunanAdet = stream.Read(buffer, tur * buffer.Length, buffer.Length);
+        //okunanAdet = await stream.ReadAsync(buffer, 0, buffer.Length);
+
+        // !!! buffer da okunan parça var !!!
+
+        if(okunanAdet < buffer.Length){
+            break;
+        }
+        tur++;
+    }
+}

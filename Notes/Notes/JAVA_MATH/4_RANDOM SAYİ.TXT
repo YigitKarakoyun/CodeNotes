@@ -1,0 +1,12 @@
+import java.util.Random;
+class random_sayi{
+    public static void main(String[] args){
+        Random zar = new Random();
+        int sayi;
+        for(int sayac=1; sayac<=10;sayac++){
+            //Zarda 0 sayýsý olmadýðýndan her seferinde 1 arttýr.
+            sayi = 1+ zar.nextInt(6);  //try 10
+            System.out.println(sayi + " ");
+        }
+    }
+}

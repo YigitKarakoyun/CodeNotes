@@ -1,0 +1,17 @@
+public class diger {
+    public void simpleMessage(String name) {
+	System.out.print("Merhaba " +  name);
+    }
+}
+
+
+import java.util.Scanner;
+class ana{
+    public static void main(String args[]){
+	Scanner input = new Scanner(System.in);
+	diger digerObject = new diger();
+	System.out.println("Adini Gir: ");
+	String name =  input.nextLine();
+	digerObject.simpleMessage(name);
+    }  
+}

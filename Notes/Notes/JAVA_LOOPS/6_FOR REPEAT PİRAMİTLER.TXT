@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        forRepeat(2, 2);
+        System.out.println();
+        forRepeat(3, 3);
+        System.out.println();
+        forRepeat(4, 4);
+        System.out.println();
+        forRepeat(5, 5);
+    }
+    static String repeat(int k){
+        return k > 0 ? repeat(k - 1) + "*" : "";
+    }
+    static String space(int k){
+        return k > 0 ? space(k - 1) + " " : "";
+    }
+    static void forRepeat(int i, int k){
+        if(i > 0){
+            forRepeat(i - 1, k);
+            System.out.println(
+                      repeat(i)
+                    + space((2 * k + 1) - 2 * i)
+                    + repeat(i)
+                    + space(1)
+                    + repeat((k + 1) - i)
+                    + space(2 * i - 1)
+                    + repeat((k + 1) - i));
+        }
+    }
+}

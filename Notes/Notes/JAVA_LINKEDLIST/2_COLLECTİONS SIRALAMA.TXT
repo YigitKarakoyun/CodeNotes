@@ -1,0 +1,16 @@
+import java.util.*;
+class ana_class{
+    public static void main(String args[]){
+
+        //String diziyi ve ArrayListti tanýmla.
+        String [] meyveler = {"kiraz","muz","karpuz","kavun"};
+
+	List<String> liste1 = Arrays.asList(meyveler);
+
+	Collections.sort(liste1);
+	System.out.printf("%s \n",liste1);
+
+	Collections.sort(liste1,Collections.reverseOrder());
+	System.out.printf("%s \n",liste1);
+    }
+}

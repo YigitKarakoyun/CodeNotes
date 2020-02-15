@@ -1,0 +1,8 @@
+//KLASOR YOLUNU TANIMLAR
+public String dirPath = System.getProperty("user.dir")+"\\Notes"; 
+
+//ÝLGÝLÝ SINIF
+public File dir = new File(dirPath);
+
+//YOKSA KLASOR OLUÞTUR
+if (!dir.exists()) { dir.mkdir();}

@@ -1,0 +1,121 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Xml.Linq;
+
+namespace XMLRead
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            XMLRead();
+            //XMLInsert();
+            //XMLUpdate();
+            //XMLDelete();
+            Console.Write("Ýþlem Baþarýlý Bir Þekilde Gerçekleþti...");
+            Console.Read();
+        }
+
+        private static void XMLRead()
+        {
+            XDocument xDoc = XDocument.Load(@"..\..\Data\rehber.xml"); 
+            //Xml dosyamýza eriþip yükleme iþlemini gerçekleþtiriyoruz.
+
+            XElement rootElement = xDoc.Root; 
+            //Oluþturduðumuz Root elementine XML dökümanýnda ki root elementini seçmesini saðlýyoruz.
+
+            String AD, Email, Tel, ID; 
+            //Okunan element deki veriler için deðiþken tanýmlýyoruz.
+
+            foreach (XElement rehberimiz in rootElement.Elements()) 
+            //Foreach ile okudumuz root taglarý arasýndaki Rehber Elementi içinde dönüyoruz ver verileri okumaya baþlýyoruz.
+            {
+                ID = rehberimiz.Attribute("id").Value;//Rehber elementinin atribute id sini al.
+                AD = rehberimiz.Element("kisi_Adý").Value;//Rehber elementimize ait kiþi_Adý elementin deðerini al.
+                Email = rehberimiz.Element("kisi_EMail").Value;//Rehber elementimize ait kisi_EMail elementin deðerinial.
+                Tel = rehberimiz.Element("kisi_Tel").Value;//Rehber elementimize ait kisi_Tel elementin deðerini al.
+                Console.Write("ID: " + ID + " AD: " + AD + " Email: " + Email + " Tel: " + Tel); 
+                //Aldýðýmýz deðerleri deðiþken üzerinden ekrana yazdýr.
+            }
+        }
+
+        private static void XMLInsert()
+        {
+            XDocument xDoc = XDocument.Load(@"..\..\Data\rehber.xml");
+            //Xml dosyamýza eriþip yükleme iþlemini gerçekleþtiriyoruz.
+
+            XElement rootElement = xDoc.Root;
+            //Oluþturduðumuz Root elementine XML dökümanýnda ki root elementini seçmesini saðlýyoruz.
+
+            XElement newElement = new XElement("rehber");
+            //Yeni bir element oluþturuyoruz.
+
+            XAttribute idAttribute = new XAttribute("id", "4");
+            //Elementimize attribute yani Id atamasý yapýyoruz.
+
+            XElement adiElement = new XElement("kisi_Adý", "Ömer Þakir");
+            XElement telefonElement = new XElement("kisi_Tel", "0555*******");
+            XElement emailElement = new XElement("kisi_EMail", "omer@hotmail.com");
+            //Elementlerimizin verilerini oluþturmaya devam ediyoruz...
+
+            newElement.Add(idAttribute, adiElement, telefonElement, emailElement); 
+            //Verilerimizi rehber elementimizin içine sýralý bir þekilde ekliyoruz.
+
+            rootElement.Add(newElement); 
+            //Oluþturduðumuz yeni elementi root tagýnýn içine ekliyoruz.
+
+            xDoc.Save(@"..\..\Data\rehber.xml");
+            //Yaptýðýmýz iþlemi kayýt ediyoruz.
+        }
+
+        private static void XMLUpdate()
+        {
+            XDocument xDoc = XDocument.Load(@"..\..\Data\rehber.xml");
+            //Xml dosyamýza eriþip yükleme iþlemini gerçekleþtiriyoruz.
+
+            XElement rootElement = xDoc.Root;
+            //Oluþturduðumuz Root elementine XML dökümanýnda ki root elementini seçmesini saðlýyoruz.
+
+            foreach (XElement rehberimiz in rootElement.Elements())
+            //Root Tagýmýz içindeki rehber Elementlerinde dönmeye baþlýyoruz.
+            {
+
+                if (rehberimiz.Attribute("id").Value == "1") 
+                //attributes id si 1 olan veri yakalýyoruz Xml Dosyamýzda Fatih Olan kiþi.
+                {
+                    rehberimiz.Element("kisi_Adý").Value = "Selim"; 
+                    //attributes id si 1 olan anýl adlý kiþiyi selim yap.
+                    break; 
+                    //Dongüden çýk.
+                }
+            }
+            xDoc.Save(@"..\..\Data\rehber.xml");
+            //Yaptýðýmýz iþlemi kayýt ediyoruz.
+        }
+
+        private static void XMLDelete()
+        {
+            XDocument xDoc = XDocument.Load(@"..\..\Data\rehber.xml");
+            //Xml dosyamýza eriþip yükleme iþlemini gerçekleþtiriyoruz.
+
+            XElement rootElement = xDoc.Root;
+            //Oluþturduðumuz Root elementine XML dökümanýnda ki root elementini seçmesini saðlýyoruz.
+
+            foreach (XElement rehberimiz in rootElement.Elements())
+            //Root Tagýmýz içindeki rehber Elementlerinde dönmeye baþlýyoruz...
+            {
+
+                if (rehberimiz.Attribute("id").Value == "2") 
+                //attributes id si 2 olan elementi yakalýyoruz Xml Dosyamýzda Seyfi Olan kiþi...
+                {
+                    rehberimiz.Remove();
+                    //attributes id si 2 olan elementi Remove metodu ile siliyoruz.
+                }
+            }
+            xDoc.Save(@"..\..\Data\rehber.xml");
+            //Yaptýðýmýz iþlemi kayýt ediyoruz.
+        }
+    }
+}

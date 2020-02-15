@@ -1,0 +1,33 @@
+//TELEFONUN UYUMASINI ÖNLER
+Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+//OnTriggerEnter
+Obje içinden 1 þey geçerse
+
+//Snap Settings
+Edit - Snap Settings(Yakalama )
+Nesneleri seçip - Snap All Axes(Y deðerini deðiþtirirsek yakalama y den olur)
+
+//Gizmos týkladýðýmýzda 
+Görünmesi istediðimiz ve istemediðimiz þeyleri buradam ayarlarýz
+
+Sprite Top ekle Pixel Per Unit 500 yaparsýn boyutu küçülür.
+Collider 2d ekle alt tuþuna basýlý tutup collider ayarla boyutlandýr.
+
+Materyal Physics2d oluþtur top collider 0 1 deðerlerini uygula.
+
+//Kodlarýn çalýþtýrýlma sýrasý
+Edit - Project Settings - Script Execution Order 
+- týklayarak çalýþma sýrasý ayarlanabilir.
+
+//Collision Detection
+Çarpýþmayý arada kaçýrmasýnýn sebebi Discrate ayarlý continious yaparsak. Kaçamaz
+
+//SONRAKÝ SAHNEYE GEÇ
+SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+
+//Sahne deðiþsede müzik çalar.
+GameObject.DontDestroyOnLoad(this.gameObject);
+
+//Lerp yumuþak görüntü saðlar.
+Vector3.Lerp

@@ -1,0 +1,26 @@
+import java.util.*;
+class ana_class{
+public static void main(String args[])
+{
+    //String diziyi ve ArrayListti tanýmla.
+    String [] meyveler = {"kiraz","muz","karpuz","kavun"};
+    List<String> liste1 = new ArrayList<String>();
+
+    //Meyveler isimli dizinin içerisindeki elemanlarý teker teker 
+    //liste1 isimli AraryListin içerisine at.
+    for (String x: meyveler) liste1.add(x);
+
+    //2.String diziyi ve 2.ArrayListti tanýmla.
+    String [] dahacokmeyve = {"kivi","elma"};
+    List<String> liste2 = new ArrayList<String>();
+   
+    //dahacokmeyve isimli dizinin içerisindeki elemanlarý teker teker 
+    //liste2 isimli AraryListin içerisine at.
+    for (String y: dahacokmeyve) liste2.add(y);
+
+    // liste2 isimli ArrayListin içerisindeki bilgileri ekrana yaz.
+    for (int i=0;i<liste2.size();i++){
+	System.out.printf("%s ", liste2.get(i));
+    }
+}
+}

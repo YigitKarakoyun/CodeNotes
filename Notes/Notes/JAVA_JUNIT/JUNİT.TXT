@@ -1,0 +1,76 @@
+
+//-----------------------JUNIT----------------------------------
+Java’da diðer pek çok programlama dilinde olduðu gibi test kodlarý yazýlarak (white box testing), geliþtirilen programýn kodlarý test edilebilir . Java kodlarýný test etmek için farklý araçlar bulunsa da. Temel anlamda Java’da  test için kullanýlacak en iyi araç JUnit dir. Aþaðýda bir kodun nasýl test edildiði ile ilgili bir örnek adým adým anlatýlarak verilmiþtir.
+
+1.adým ana kodu yazýn (Java Class).
+
+package testing;
+public class JunitTesting {
+  public int square(int x) {
+    return x*x;
+  }
+  public int countA(String word){
+    int count=0;
+    for (int i = 0; i < word.length(); i++) {
+      if (word.charAt(i)=='a' || word.charAt(i)== 'A') {
+        count++;
+      }
+    }
+    return count;
+  }
+}
+ 
+
+2.adým squareTest isimli (JUnit classýný ekleyin)
+
+Package’in üzerine gelip sað click yapýn. Açýlan ekranda New->JUnitTestCase seçeneðini týklayýn. Açýlan ekranda class ismi olarak squareTest olarak girip OK butonuna týklayýn. Yazýlacak kod aþaðýda verilmiþtir.
+
+package testing;
+import static org.junit.Assert.*;
+import org.junit.Test;
+public class squareTest {
+  @Test
+  public void test() {
+    JunitTesting test = new JunitTesting();
+    int output= test.square(5);
+    assertEquals(25,output);
+  }
+}
+ 
+
+3.adým countAtest isimli (JUnit classýný ekleyin)
+
+Package’in üzerine gelip sað click yapýn. Açýlan ekranda New->JUnitTestCase seçeneðini týklayýn. Açýlan ekranda class ismi olarak countAtest olarak girip OK butonuna týklayýn. Yazýlacak kod aþaðýda verilmiþtir.
+
+package testing;
+import static org.junit.Assert.*;
+import org.junit.Test;
+public class countAtest {
+  @Test
+  public void test() {
+    JunitTesting test = new JunitTesting();
+    int output= test.countA("alphabet");
+    // alphabet yazýsýnda 2 tane a olduðu için beklenen sonuç 2 olmalý.
+    assertEquals(2,output);
+  }
+}
+4.adým testleri teker teker çalýþtýrma
+
+Aktif olan testti seçip testti çalýþtýrýn. squareTest isimli classta beklenen deðer 5 in karesi için 25 olduðundan ilk test baþarý ile çalýþacaktýr. assertEquals(25,output);
+
+5.adým testleri çoklu çalýþtýrýn. (Alltests.Java)
+
+Package’in üzerine gelip sað click yapýn. Açýlan ekranda New->Other->Java->JUnit->JUnitTest Suite seçeneðini týklayýn. Açýlan ekranda package kýsýma testing yazýn. Aþaðýda daha önceden yazdýðýmýz iki test kodu çýkacaktýr.  Finish isimli butona týkladýktan sonra testleri toplu olarak çalýþtýrmamýza yarayan kod otomatik olarak oluþturulacaktýr. Bu kod ayrýca aþaðýda verilmiþtir.
+
+package testing;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+@RunWith(Suite.class)
+@SuiteClasses({ countAtest.class, squareTest.class })
+public class AllTests {
+}
+Proje Alltests isimli class seçipip sað click yapýlýp Run As-> JUnit Test menüleri seçilerek çalýþtýrýldýðýnda çýkacak ekran aþaðýda verilmiþtir. Aþaðýdaki ekranda programýn yazýlan 2 farklý testtende baþarý ile geçtiði görülmektedir. (Yeþil barlar ve yeþil onay iþaretleri)
+//--------------------------------ADRESLER---------------------------------
+//http://javayaz.com/?p=1362
+//https://www.youtube.com/watch?time_continue=8&v=I8XXfgF9GSc

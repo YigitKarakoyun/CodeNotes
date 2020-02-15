@@ -1,0 +1,26 @@
+//------------------------------------------ İLGİLİ ÇOCUĞUNU GAMEOBJECT DÖNDÜRÜR-----------------------public GameObject getCocukNesne(GameObject tempNesne,int i)
+{
+    if (tempNesne==null) { return null; }
+    int adet =tempNesne.transform.childCount;
+    if(adet>0 && i<adet && i>=0){return tempNesne.transform.GetChild(i).gameObject;}
+    return null;
+}
+
+
+//------------------------------------------  ÇOCUK SAYISINI VERİR.------------------------------------------------------
+transform.childCount;
+
+//------------------------------------------  KAÇINCI ÇOCUK GAMEOBJECT VERİR ----------------------------------
+transform.GetChild(i).gameObject;}
+
+//------------------------------------------  ÇOCUKLARINI BULMA SADE------------------------------------------------
+
+Transform[] allChildren = nesne1.GetComponentsInChildren<Transform>();    
+foreach (Transform child in allChildren)
+{
+    GameObject obj = child.gameObject;
+    Debug.Log(obj);
+}
+
+
+

@@ -1,0 +1,25 @@
+Static Storage Class
+The static variable is initialized only once and exists till the end of a program. It retains its value between multiple functions call.
+
+The static variable has the default value 0 which is provided by compiler.
+
+#include <iostream>  
+using namespace std;  
+void func() {    
+   static int i=0; //static variable    
+   int j=0; //local variable    
+   i++;    
+   j++;    
+   cout<<"i=" << i<<" and j=" <<j<<endl;    
+}    
+int main()  
+{  
+ func();    
+ func();    
+ func();    
+}  
+Output:
+
+i= 1 and j= 1
+i= 2 and j= 1
+i= 3 and j= 1

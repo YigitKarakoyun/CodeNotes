@@ -1,0 +1,7 @@
+//BYTE DÝZÝSÝNÝ METNE DÖNÜÞTÜRÜR
+var yazi = Encoding.UTF32.GetString(dizi32);
+var yazi16 = Encoding.Unicode.GetString(dizi16);
+
+// Yanlýþ
+var caprazTest1 = Encoding.Unicode.GetString(diziascii);
+var caprazTest2 = Encoding.UTF8.GetString(dizi16);

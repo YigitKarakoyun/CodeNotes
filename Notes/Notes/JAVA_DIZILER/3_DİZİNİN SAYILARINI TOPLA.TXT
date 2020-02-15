@@ -1,0 +1,10 @@
+class dizi_topla{
+    public static void main(String[] args){
+	int a[] = {32,12,18,54,2};
+	int toplam=0;
+	for (int sayac=0;sayac<a.length;sayac++){
+	    toplam+=a[sayac];
+	}
+	System.out.println("Sayýlarýn Toplamý " + toplam);
+    }
+}

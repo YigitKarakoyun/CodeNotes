@@ -1,0 +1,2 @@
+//INFOBOX
+MessageBox.Show("Deðiþiklikleri kaydetmek istiyor musunuz?", "Bilgilendirme Penceresi",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Information);

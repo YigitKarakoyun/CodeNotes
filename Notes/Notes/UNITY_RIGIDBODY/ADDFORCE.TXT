@@ -1,0 +1,42 @@
+Asdas
+if (Input.GetMouseButtonDown(0))
+{
+RaycastHit hitInfo = new RaycastHit();
+if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Construction"){print ("It's working");}
+}
+
+FARE BASILIRSA
+public GameObject particle;
+    void Update(){
+        if (Input.GetButtonDown("Fire1")){
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray)) Instantiate(particle, transform.position, transform.rotation);
+        }
+    }
+
+
+FAREYLE ÜZERÝNE TIKLANINCA
+    private Rigidbody rigidbody;
+    void Start(){ rigidbody = GetComponent<Rigidbody>();}
+
+    public float force;    
+    private void OnMouseDown()
+    {
+        rigidbody.AddForce(new Vector3(0, 0, 5));//BASÝT KUVVET
+        #region VARSAYILAN FORCE MODDA ÝKÝ METOD AYNI SONUCU VERÝR
+        rigidbody.AddForce(new Vector3(0, 0, force));  
+        rigidbody.AddForce(new Vector3(0, 0, force),ForceMode.Force);
+        #endregion
+
+        rigidbody.velocity = (new Vector3(0, 0, force)); //SABÝT HIZ
+        rigidbody.AddForce(new Vector3(0, 0, force),ForceMode.Impulse);//HEMEN KUVVETÝ ANÝ PATLAMA ÇARPMA EFEKTÝ
+        rigidbody.AddForce(new Vector3(0, 0, force), ForceMode.VelocityChange);//IMPULSE AMA KÜTLEYÝ ÖNEMSEMÝYOR
+        rigidbody.AddForce(new Vector3(0, 0, force), ForceMode.Acceleration);//KÜTLEYÝ ÖNEMSEMÝYOR
+    }
+
+FAREYLE SOLA BASILIRSA
+if (Input.GetMouseButtonDown(0)){}
+
+
+FARE KONUMU
+Input.mousePosition

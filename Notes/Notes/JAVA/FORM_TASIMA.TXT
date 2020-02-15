@@ -1,0 +1,35 @@
+//------------------------------FORM TAÞIMA----------------------------------------
+boolean isMove;
+double mx, my;
+
+    //-------------------------SÜRÜKLENME ZAMANINDA--------------------------------
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {                                  
+        // TODO add your handling code here:
+        if (isMove){
+        
+         double mouseX = MouseInfo.getPointerInfo().getLocation().getX();
+         double mouseY = MouseInfo.getPointerInfo().getLocation().getY();
+        
+        this.setLocation((int)(mouseX-mx),(int)(mouseY-my));//Tuttuðun yerden taþýma
+
+        //System.out.println("moved");
+        }
+    }                                 
+    
+//------------------------ TUTTUÐUNDA -----------------------------------------
+    private void formMousePressed(java.awt.event.MouseEvent evt) {                                  
+        // TODO add your handling code here:
+        isMove = true;
+
+        mx = evt.getX();
+        my = evt.getY();
+        //System.out.println(mx+" "+my);
+        //System.out.println("týklandý "+ isMove);
+    }                                 
+//------------------------ BIRAKTIÐINDA----------------------------------------
+    private void formMouseReleased(java.awt.event.MouseEvent evt) {                                   
+        // TODO add your handling code here:
+        isMove = false;
+        //System.out.println("up");
+    }                                  
+//######################################################################################

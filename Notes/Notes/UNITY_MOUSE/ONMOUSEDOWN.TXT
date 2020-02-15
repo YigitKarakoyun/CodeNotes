@@ -1,0 +1,5 @@
+//FARE ÜZERÝNE TIKLANINCA  
+private void OnMouseDown()
+{
+   
+}

@@ -1,0 +1,35 @@
+using System;
+using System.Windows.Forms;
+using word = Microsoft.Office.Interop.Word;
+using System.Reflection;//Meta data
+namespace projeWord
+{
+    public partial class Form1 : Form
+    {
+        public Form1(){ InitializeComponent();}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            word.Application word_app = new word.Application();
+            word_app.Visible = true;
+            word.Document word_doc;
+            object word_object = Missing.Value;
+            word_doc = word_app.Documents.Add(ref word_object);
+            word_app.Selection.TypeText(richTextBox1.Text);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            object omissing = Missing.Value;
+            object dokumansonu = "\\endofdoc";
+
+            word.Application olustur;
+            word.Document icerik;
+            olustur = new word.Application();
+            olustur.Visible = true;
+            icerik = olustur.Documents.Add(ref omissing);
+
+        }
+    }
+}

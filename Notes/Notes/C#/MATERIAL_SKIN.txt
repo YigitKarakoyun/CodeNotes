@@ -1,0 +1,44 @@
+using System;
+using System.Windows.Forms;
+
+namespace projeMaterialSkin1
+{
+    public partial class Form1 :MaterialSkin.Controls.MaterialForm
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            MaterialSkin.MaterialSkinManager manager = MaterialSkin.MaterialSkinManager.Instance;
+            manager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+            /*manager.ColorScheme = new MaterialSkin.ColorScheme(
+                MaterialSkin.Primary.LightGreen900,
+                MaterialSkin.Primary.Green500,
+                MaterialSkin.Primary.Lime400,
+                MaterialSkin.Accent.Indigo100,
+                MaterialSkin.TextShade.WHITE);*/
+            
+            /* materialSkinManager.ColorScheme = new ColorScheme(
+                            Primary.Blue400, Primary.Blue500,
+                            Primary.Blue500, Accent.LightBlue200,
+                            TextShade.WHITE
+                        );*/
+            manager.ColorScheme = new MaterialSkin.ColorScheme(
+                MaterialSkin.Primary.BlueGrey800,//ANA RENK
+                MaterialSkin.Primary.BlueGrey900,
+                MaterialSkin.Primary.BlueGrey500,//BAŞLIK RENGİ
+                MaterialSkin.Accent.LightBlue200,
+                MaterialSkin.TextShade.WHITE);//YAZI RENGİ
+            manager.AddFormToManage(this);
+            textPass.Text = "";
+
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test");
+        }
+    }
+}
+
+
+
