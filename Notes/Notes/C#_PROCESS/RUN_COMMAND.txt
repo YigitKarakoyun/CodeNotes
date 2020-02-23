@@ -1,0 +1,162 @@
+https://stackoverflow.com/questions/1469764/run-command-prompt-commands
+
+this is all you have to do run shell commands from C#
+
+string strCmdText;
+strCmdText= "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
+System.Diagnostics.Process.Start("CMD.exe",strCmdText);
+EDIT:
+
+This is to hide the cmd window.
+
+System.Diagnostics.Process process = new System.Diagnostics.Process();
+System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+startInfo.FileName = "cmd.exe";
+startInfo.Arguments = "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
+process.StartInfo = startInfo;
+process.Start();
+
+//-------------------------------------------------------------------------------------------------------------------------------------
+
+Tried @RameshVel solution but I could not pass arguments in my console application. If anyone experiences the same problem here is a solution:
+
+using System.Diagnostics;
+
+Process cmd = new Process();
+cmd.StartInfo.FileName = "cmd.exe";
+cmd.StartInfo.RedirectStandardInput = true;
+cmd.StartInfo.RedirectStandardOutput = true;
+cmd.StartInfo.CreateNoWindow = true;
+cmd.StartInfo.UseShellExecute = false;
+cmd.Start();
+
+cmd.StandardInput.WriteLine("echo Oscar");
+cmd.StandardInput.Flush();
+cmd.StandardInput.Close();
+cmd.WaitForExit();
+Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+var proc1 = new ProcessStartInfo();
+string anyCommand; 
+proc1.UseShellExecute = true;
+
+proc1.WorkingDirectory = @"C:\Windows\System32";
+
+proc1.FileName = @"C:\Windows\System32\cmd.exe";
+proc1.Verb = "runas";
+proc1.Arguments = "/c "+anyCommand;
+proc1.WindowStyle = ProcessWindowStyle.Hidden;
+Process.Start(proc1);
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+
+private void CombineFiles(string jpgFileName, string zipFileName)
+{
+    using (Stream original = new FileStream(jpgFileName, FileMode.Append))
+    {
+        using (Stream extra = new FileStream(zipFileName, FileMode.Open, FileAccess.Read))
+        {
+            var buffer = new byte[32 * 1024];
+
+            int blockSize;
+            while ((blockSize = extra.Read(buffer, 0, buffer.Length)) > 0)
+            {
+                original.Write(buffer, 0, blockSize);
+            }
+        }
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------------------------
+None of the above answers helped for some reason, it seems like they sweep errors under the rug and make troubleshooting one's command difficult. So I ended up going with something like this, maybe it will help someone else:
+
+var proc = new Process
+{
+    StartInfo = new ProcessStartInfo
+    {
+        FileName = @"C:\Program Files\Microsoft Visual Studio 14.0\Common7\IDE\tf.exe",
+        Arguments = "checkout AndroidManifest.xml",
+        UseShellExecute = false,
+        RedirectStandardOutput = true,
+        CreateNoWindow = true,
+        WorkingDirectory = @"C:\MyAndroidApp\"
+    }
+};
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+if you want to keep the cmd window open or want to use it in winform/wpf then use it like this
+
+    string strCmdText;
+    //For Testing
+    strCmdText= "/K ipconfig";
+
+    System.Diagnostics.Process.Start("CMD.exe",strCmdText);
+
+//Will keep the cmd window open
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+Here is little simple and less code version. It will hide the console window too-
+
+System.Diagnostics.Process process = new System.Diagnostics.Process();
+process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+process.StartInfo.FileName = "cmd.exe";
+process.StartInfo.Arguments = "/C copy /b Image1.jpg + Archive.rar Image2.jpg";
+process.Start();
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+You can achieve this by using the following method (as mentioned in other answers):
+
+strCmdText = "'/C some command";
+Process.Start("CMD.exe", strCmdText);
+When I tried the methods listed above I found that my custom command did not work using the syntax of some of the answers above.
+
+I found out more complex commands need to be encapsulated in quotes to work:
+
+string strCmdText;
+strCmdText = "'/C cd " + path + " && composer update && composer install -o'";
+Process.Start("CMD.exe", strCmdText);
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+
+if you want to run the command in async mode - and print the results. you can you this class:
+
+    public static class ExecuteCmd
+    {
+    // Executes a shell command synchronously.
+    public static void ExecuteCommandSync(object command)
+    {
+        try
+        {
+            // create the ProcessStartInfo using "cmd" as the program to be run, and "/c " as the parameters.
+            // Incidentally, /c tells cmd that we want it to execute the command that follows, and then exit.
+            System.Diagnostics.ProcessStartInfo procStartInfo = new System.Diagnostics.ProcessStartInfo("cmd", "/c " + command);
+            // The following commands are needed to redirect the standard output. 
+            //This means that it will be redirected to the Process.StandardOutput StreamReader.
+            procStartInfo.RedirectStandardOutput =  true;
+            procStartInfo.UseShellExecute = false;
+            // Do not create the black window.
+            procStartInfo.CreateNoWindow = true;
+            // Now we create a process, assign its ProcessStartInfo and start it
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+            proc.StartInfo = procStartInfo;
+            proc.Start();
+
+            // Get the output into a string
+            string result = proc.StandardOutput.ReadToEnd();
+
+            // Display the command output.
+            Console.WriteLine(result);
+        }
+        catch (Exception objException)
+        {
+            // Log the exception
+            Console.WriteLine("ExecuteCommandSync failed" + objException.Message);
+        }
+
+//---------------------------------------------------------------------------------------------------------------------------------------
+
