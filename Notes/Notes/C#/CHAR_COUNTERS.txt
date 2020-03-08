@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleAppWord
+{
+    class Characters_Counts
+    {
+        public int count { get;private set; } = 0;
+        public char[] character { get; private set; }
+        public int[] character_count { get; private set; } 
+        public void Set_Word(string word)
+        {
+            int count = word.Length;
+            character = new char[count];
+            character_count = new int[count];
+            
+            int cindex = 0;
+            count = 0;
+            foreach (char item in word)
+            {
+                if (!character.Contains(item))
+                {
+                    character[cindex] = item;
+                    character_count[cindex] += 1;
+                    cindex++;
+                    count++;
+                }
+                else
+                {
+                    int tindex = Array.IndexOf(character,item); 
+                    character_count[tindex] += 1;
+                }
+                
+            }
+            
+
+        }
+     
+    }
+}
