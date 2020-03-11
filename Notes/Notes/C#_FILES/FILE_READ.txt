@@ -1,0 +1,11 @@
+using System.IO;
+using System.Reflection;
+
+var assembly = Assembly.GetExecutingAssembly();
+var resourceName = "MyCompany.MyProduct.MyFile.txt";
+
+using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+using (StreamReader reader = new StreamReader(stream))
+{
+    string result = reader.ReadToEnd();
+}

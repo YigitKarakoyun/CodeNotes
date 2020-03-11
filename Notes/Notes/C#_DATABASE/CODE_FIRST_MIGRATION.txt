@@ -1,0 +1,7 @@
+enable-migrations
+
+update-database
+
+update-database -force
+
+Add-Migration yeni
