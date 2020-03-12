@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
+//Manage nuget entity framework
+
 namespace BA.Entity
 {
     public class Ders
@@ -20,15 +22,6 @@ namespace BA.Entity
         public string Adi { get; set; }
         public virtual Ders Ders { get; set; }
     }
-    public class BAEntities : DbContext
-    {
-        public BAEntities() : base("name=BAConnection")
-        {
-
-        }
-
-        public DbSet<Ders> Ders { get; set; }
-        public DbSet<Ogretmen> Ogretmens { get; set; }
-    }
 }
+
 
