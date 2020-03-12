@@ -1,0 +1,4 @@
+using System.Configuration;
+string connection_string = ConfigurationManager.ConnectionStrings["BAConnection"].ToString();
+
+
