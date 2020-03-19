@@ -1,5 +1,5 @@
-
 //--------------------------------- DELETE ------------------------------------
+
 private void buttonDelete_Click(object sender, EventArgs e)
 {
    int seciliKayitId = int.Parse(listBox2.SelectedItem.ToString().Split('-')[0]);
@@ -12,3 +12,5 @@ private void buttonDelete_Click(object sender, EventArgs e)
    conn.Close();
    MessageBox.Show(etkilenenKayit+" kayıt etkilenmiştir");
 }
+
+

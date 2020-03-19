@@ -1,0 +1,7 @@
+Dictionary<int, string> dict = new Dictionary<int, string>();
+
+dict.Add(1, "one");
+dict.Add(2, "two");
+dict.Add(3, "three");
+
+Hashtable ht = new Hashtable(dict);

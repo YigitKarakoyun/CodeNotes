@@ -1,0 +1,51 @@
+---------------------------------------------- C# HASHTABLE CLASS------------------------------------------ 
+The Hashtable class represents a collection of key-and-value pairs that are organized based on
+the hash code of the key. It uses the key to access the elements in the collection.
+
+A hash table is used when you need to access elements by using key, and you can identify a useful
+key value. Each item in the hash table has a key/value pair. The key is used to access the items in
+the collection.
+
+Methods and Properties of the Hashtable Class
+The following table lists some of the commonly used properties of the Hashtable class:
+
+Property            Description
+Count                Gets the number of key-and-value pairs contained in the Hashtable.
+IsFixedSize      Gets a value indicating whether the Hashtable has a fixed size.
+IsReadOnly      Gets a value indicating whether the Hashtable is read-only.
+Item                   Gets or sets the value associated with the specified key.
+Keys                   Gets an ICollection containing the keys in the Hashtable.
+Values               Gets an ICollection containing the values in the Hashtable.
+
+The following table lists some of the commonly used methods of the Hashtable class:
+
+Sr.No.   Method
+1            public virtual void Addobjectkey, objectvalue;
+              Adds an element with the specified key and value into the Hashtable.
+
+2            public virtual void Clear;
+              Removes all elements from the Hashtable.
+
+3            public virtual bool ContainsKeyobjectkey;
+              Determines whether the Hashtable contains a specific key.
+ 
+4            public virtual bool ContainsValueobjectvalue;
+              Determines whether the Hashtable contains a specific value.
+
+5            public virtual void Removeobjectkey;
+              Removes the element with the specified key from the Hashtable.
+
+
+Methods           Usage
+Add	               Adds an item with a key and value into the hashtable.
+Remove            Removes the item with the specified key from the hashtable.
+Clear	               Removes all the items from the hashtable.
+Contains           Checks whether the hashtable contains a specific key.
+ContainsKey	   Checks whether the hashtable contains a specific key.
+ContainsValue Checks whether the hashtable contains a specific value.
+GetHash	   Returns the hash code for the specified key.
+
+void Add(object key, object value);
+
+//https://www.tutorialsteacher.com/csharp/csharp-hashtable
+

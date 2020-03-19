@@ -1,8 +1,8 @@
 MySqlConnection baglanti = 
 new MySqlConnection("Server=127.0.0.1;Database=kitaplar_veritbani;Uid=root;Pwd=;");
-//baðlantý yolunu verdik
+//baglanti yolunu verdik
 
-baglanti.Open();//baðlantýyý açtýk
+baglanti.Open();//baglantiyi actik
 
 DataSet ds = new DataSet();
 MySqlCommand command = new MySqlCommand("select * from kitaplar_tablosu", baglanti);
@@ -10,4 +10,5 @@ MySqlDataAdapter adapter = new MySqlDataAdapter(command);
 adapter.Fill(ds);
 dataGridView1.DataSource = null;
 dataGridView1.DataSource = ds.Tables[0];
-MessageBox.Show("Adapter Veritabani Açýldý");
+MessageBox.Show("Adapter Veritabani Acildi");
+

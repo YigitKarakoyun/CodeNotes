@@ -1,0 +1,12 @@
+Hashtable ht = new Hashtable()
+                {
+                    { 1, "One" },
+                    { 2, "Two" },
+                    { 3, "Three" },
+                    { 4, "Four" }
+                };
+
+ht.Contains(2);// returns true
+ht.ContainsKey(2);// returns true
+ht.Contains(5); //returns false
+ht.ContainsValue("One"); // returns true

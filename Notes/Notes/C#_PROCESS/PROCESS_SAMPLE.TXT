@@ -1,4 +1,4 @@
-//-----------------------------DOSYA YOLU AÇMA-------------------------------
+//-----------------------------DOSYA YOLU ARAMA-------------------------------
 
 //EKLENECEK USING
 using System.Diagnostics;
@@ -11,3 +11,4 @@ System.Diagnostics.Process prc = new System.Diagnostics.Process();
 prc.StartInfo.FileName = windir + @"\explorer.exe";
 prc.StartInfo.Arguments = myDocspath;
 prc.Start();
+

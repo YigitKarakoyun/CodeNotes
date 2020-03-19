@@ -1,7 +1,10 @@
-//------------------------- BASİT ACCESS BAĞLANTISI --------------------------- 
+//------------------------- BASIT ACCESS BAGLANTISI --------------------------- 
+
 private void buttonBaglan_Click(object sender, EventArgs e)
 {
   OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+Application.StartupPath+"//access_db.accdb;Persist Security Info = False; ");
   conn.Open(); MessageBox.Show("Bağlantı açıldı");
   conn.Close();MessageBox.Show("Bağlantı kapandı");
 }
+
+

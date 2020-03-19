@@ -1,4 +1,5 @@
 //------------------- OLEDBDATAREADER ILE SATIR SATIR OKUMA --------------------
+
 private void buttonKisileriGetir_Click(object sender, EventArgs e)
 {
    OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+Application.StartupPath+"//access_db.accdb;Persist Security Info = False; ");
@@ -18,3 +19,4 @@ private void buttonKisileriGetir_Click(object sender, EventArgs e)
    }
    conn.Close();
 }
+

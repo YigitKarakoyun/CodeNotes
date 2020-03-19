@@ -1,15 +1,17 @@
-private void button2_Click(object sender, EventArgs e)
+private void btnMySqlConnection_Click(object sender, EventArgs e)
 {
-  //SERVER = NOKTA ÇALIÞMIYOR
+  //SERVER = NOKTA CALISMIYOR
   //MySqlConnection baglanti = 
 new MySqlConnection("Server=localhost;Database=kitaplar_veritbani;Uid=root;Pwd=;");
    
     MySqlConnection baglanti = 
 new MySqlConnection("Server=127.0.0.1;Database=kitaplar_veritbani;Uid=root;Pwd=;");
-    //baðlantý yolunu verdik
+    //baglanti yolunu verdik
 
-    baglanti.Open();//baðlantýyý açtýk
+    baglanti.Open();//baglantiyi actik
     MySqlConnection.ClearPool(baglanti);
-    MySqlConnection.ClearAllPools();//bundan önceki baðlantýlarý temizledik
-    MessageBox.Show("Kitaplar Veritabani Açýldý");
+    MySqlConnection.ClearAllPools();//bundan onceki baglantilari temizledik
+    MessageBox.Show("Kitaplar Veritabani Acildi");
 }
+
+

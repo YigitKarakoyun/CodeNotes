@@ -8,7 +8,7 @@ namespace projeWord
 {
     public partial class Form1 : Form
     {
-        public Form1(){ InitializeComponent();richTextBox1.Text = "WORD UYGULAMA ÖRNEÐÝ\nSATIR 2 ÖRNEK"; }
+        public Form1(){ InitializeComponent();richTextBox1.Text = "WORD UYGULAMA ORNEGI\nSATIR 2 ORNEK"; }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -44,7 +44,7 @@ namespace projeWord
             word.Paragraph paragraph2;
             object hedef = icerik.Bookmarks.get_Item(ref dokumansonu).Range;
             paragraph2 = icerik.Content.Paragraphs.Add(ref hedef);
-            paragraph2.Range.Text = "Ýkinci Paragraf";
+            paragraph2.Range.Text = " kinci Paragraf";
             paragraph2.Range.Font.Bold = 0;
             paragraph2.Format.SpaceAfter = 100;
             paragraph2.Range.InsertParagraphAfter();
@@ -53,7 +53,7 @@ namespace projeWord
             word.Paragraph paragraph3;
             hedef = icerik.Bookmarks.get_Item(ref dokumansonu).Range;
             paragraph3 = icerik.Content.Paragraphs.Add(ref hedef);
-            paragraph3.Range.Text = "Üçüncü Paragraf";
+            paragraph3.Range.Text = "   nc  Paragraf";
             paragraph3.Range.Font.Bold = 2;
             paragraph3.Format.SpaceAfter = 30;
             paragraph3.Range.InsertParagraphAfter();
@@ -71,7 +71,7 @@ namespace projeWord
             {
                 for (c = 1; c <= 5; c++)
                 {
-                    strText = "Satýr" + r + "Sütun" + c;
+                    strText = "Sat r" + r + "S tun" + c;
                     olusturTablo.Rows[1].Range.Font.Bold = 1;
                     olusturTablo.Rows[1].Range.Font.Italic = 1;
                 }
@@ -79,3 +79,4 @@ namespace projeWord
         }
     }
 }
+

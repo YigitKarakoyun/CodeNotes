@@ -1,13 +1,13 @@
 //-----------------------------------------------------------------------------
-//----------------------- KLASOR İÇİNDEKİ KLASORLER LİSTESİ--------------------
+//----------------------- KLASOR ICINDEKİ KLASORLER LİSTESI--------------------
 string klasorYolu = "C:\\yeni";
 Directory.GetDirectories(klasorYolu); 
 
-//----------------------- KLASOR YOKSA OLUŞTUR---------------------------------
+//----------------------- KLASOR YOKSA OLUSTUR---------------------------------
 strings notesYolu = Application.StartupPath + @"\Notes";
 if (!Directory.Exists(notes)){ Directory.CreateDirectory(notesYolu); }
 
-//----------------------- MASAÜSTÜNE KLASOR OLUŞTURMA--------------------------
+//----------------------- MASAUSTUNE KLASOR OLUSTURMA--------------------------
 string klasorAdi = "Notes";
 string masaustu = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 string klasorYolu = masaustu + "\\" + klasorAdi;
@@ -27,17 +27,18 @@ public void moveKlasorTasi(string yol, string hedef) { Directory.Move(yol, hedef
 public bool getKlasorVarMi(string yol) { return Directory.Exists(yol); }
 
 
-//------------------------ KLASORUN KLASORLERİNİ LİSTELEME---------------------
+//------------------------ KLASORUN KLASORLERINI LISTELEME---------------------
 public string[] getKlasorun_Klasorleri(string yol) { 
 if (!Directory.Exists(yol)) return null; 
 return Directory.GetDirectories(yol); 
 }
 
-//------------------------ KLASORUN DOSYALARINI LİSTELEME----------------------
+//------------------------ KLASORUN DOSYALARINI LISTELEME----------------------
 public string[] getKlasorun_Dosyalari(string yol) { 
 if (!Directory.Exists(yol)) return null; 
 return Directory.GetFiles(yol); }
 }
+
 
 
 

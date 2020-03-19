@@ -1,0 +1,14 @@
+Hashtable ht = new Hashtable()
+                {
+                    { 1, "One" },
+                    { 2, "Two" },
+                    { 3, "Three" },
+                    { 4, "Four" },
+                    { 5, null },
+                    { "Fv", "Five" },
+                    { 8.5F, 8.5 }
+                };
+
+foreach (DictionaryEntry item in ht)
+    Console.WriteLine("key:{0}, value:{1}",item.Key, item.Value);
+

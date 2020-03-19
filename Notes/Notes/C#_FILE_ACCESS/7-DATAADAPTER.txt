@@ -1,4 +1,5 @@
-//----------------- OLEDBDATAADAPTER İLE BİR KEREDE OKUMA --------------------
+//----------------- OLEDBDATAADAPTER İLE BIR KEREDE OKUMA --------------------
+
 private void buttonDataAdapter_Table_Click(object sender, EventArgs e)
 {
    OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Application.StartupPath + "//access_db.accdb;Persist Security Info = False; ");
@@ -18,6 +19,8 @@ private void buttonDataAdapter_Table_Click(object sender, EventArgs e)
    }  
    conn.Close();
 }
+
+
 
 
 

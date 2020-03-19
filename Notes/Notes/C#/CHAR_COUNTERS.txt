@@ -32,12 +32,9 @@ namespace ConsoleAppWord
                 {
                     int tindex = Array.IndexOf(character,item); 
                     character_count[tindex] += 1;
-                }
-                
+                }       
             }
-            
-
         }
-     
     }
 }
+

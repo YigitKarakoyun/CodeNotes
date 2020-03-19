@@ -16,7 +16,6 @@ namespace projeWord
             object word_object = Missing.Value;
             word_doc = word_app.Documents.Add(ref word_object);
             word_app.Selection.TypeText(richTextBox1.Text);
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -29,7 +28,7 @@ namespace projeWord
             olustur = new word.Application();
             olustur.Visible = true;
             icerik = olustur.Documents.Add(ref omissing);
-
         }
     }
 }
+
