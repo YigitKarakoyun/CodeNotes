@@ -1,4 +1,4 @@
-#region IMAGE BYTE DÖNÜÞÜMLERÝ
+#region IMAGE BYTE DONUSUMLERI
         public Image get_ByteDizisini_Image_Donustur(byte[] byteArrayIn)
         {
             try
@@ -21,3 +21,4 @@
         }
 
         #endregion
+

@@ -1,8 +1,9 @@
-//-----------------------ARRAY INDEXOF YÖNTEMÝYLE ARAMA YAPMAK----------------------
+//-----------------------ARRAY INDEXOF YONTEMIYLE ARAMA YAPMAK----------------------
 
 string[] AracListe = new string[] { "Opel", "Peugeot", "Mercedes", "Ferrari", "Reno", "Fiat", "Golf" };
 int index = Array.IndexOf(AracListe, txt_Ara.Text);
 if (index >= 0)
-  MessageBox.Show("Araç " + index.ToString() + ". sýrada bulundu.");
+  MessageBox.Show("Arac " + index.ToString() + ". s rada bulundu.");
 else
-   MessageBox.Show("Aradýðýnýz araç listede mevcut deðil.");
+   MessageBox.Show("Aradiginiz arac listede mevcut degil.");
+
