@@ -8,7 +8,9 @@ DataSet ds = new DataSet();
 MySqlCommand command = new MySqlCommand("select * from kitaplar_tablosu", baglanti);
 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
 adapter.Fill(ds);
+
 dataGridView1.DataSource = null;
 dataGridView1.DataSource = ds.Tables[0];
 MessageBox.Show("Adapter Veritabani Acildi");
+
 

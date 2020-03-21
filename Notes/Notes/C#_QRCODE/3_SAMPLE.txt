@@ -17,7 +17,6 @@ namespace projeQRCODE
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             try
             {
                 QRCodeDecoder decoder = new QRCodeDecoder();
@@ -31,11 +30,9 @@ namespace projeQRCODE
             catch (Exception ex)
             {
                 MessageBox.Show("Hata: "+ex.Message);
-            }
-            
-
+            }  
         }
-        
     }
 }
+
 

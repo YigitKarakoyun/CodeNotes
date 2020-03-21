@@ -7,9 +7,10 @@ baglanti.Open();//baglantiyi actik
 DataSet ds = new DataSet();
 MySqlDataAdapter adapter = 
 new MySqlDataAdapter("select * from kitaplar_tablosu",baglanti);
-
 adapter.Fill(ds);
+
 dataGridView1.DataSource = null;
 dataGridView1.DataSource = ds.Tables[0];
 MessageBox.Show("Adapter Veritabani Acildi");
+
 
