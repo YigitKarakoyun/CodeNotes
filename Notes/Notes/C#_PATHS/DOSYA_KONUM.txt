@@ -1,0 +1,3 @@
+string metin = Environment.CurrentDirectory;
+for (int i = 0; i < 9; i++) metin = metin.Remove(metin.Length-1);
+Text = metin;

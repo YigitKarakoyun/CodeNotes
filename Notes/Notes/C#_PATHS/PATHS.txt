@@ -1,0 +1,11 @@
+//------------------------- MASAÃœSTÃœ KONUM---------------------------------------
+string masaustu = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+//------------------------- EXE KLASORU KONUMUNU BELIRTIR------------------------ 
+string exeYolu = Application.StartupPath;
+
+//------------------------- EXENÄ°N YANINDAKÄ° BÄ°R KLASORU KONUMUNU BELIRTIR-------
+string klasorAdi = "yeniKlasor";
+string exeYolu = Application.StartupPath+"\\"+klasorAdi;
+
+

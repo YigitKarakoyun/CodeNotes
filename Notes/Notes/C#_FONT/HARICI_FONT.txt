@@ -1,0 +1,9 @@
+            PrivateFontCollection fontCollection = new PrivateFontCollection();
+            string path = "PressStart2P.ttf";
+            fontCollection.AddFontFile(path);
+            foreach (Control item in Controls)
+            {
+                
+                item.Font = new Font(fontCollection.Families[0], 15, FontStyle.Regular);
+
+            }
