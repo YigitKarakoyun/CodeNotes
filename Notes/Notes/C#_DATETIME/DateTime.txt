@@ -1,0 +1,29 @@
+            DateTime now = DateTime.Now;
+            label1.Text = "";
+
+            int day = now.Day;
+            int month = now.Month;
+            int year = now.Year;
+            int hour = now.Hour;
+            int minute = now.Minute;
+            int second = now.Second;
+            int milisecond = now.Millisecond;
+
+            string shortDateString = now.ToShortDateString();
+            string longDateString = now.ToLongDateString();
+
+            string shortTimeString = now.ToLongTimeString();
+            string longTimeString = now.ToLongTimeString();
+
+            label1.Text +=
+                "Day: " + day + "\n" +
+                "Month: " + month + "\n" +
+                "Year: " + year + "\n" +
+                "Hour: " + hour + "\n" +
+                "Minute: " + minute + "\n" +
+                "Second: " + second + "\n" +
+                "MiliSecond: " + milisecond + "\n\n" +
+                "ShortDateString: " + shortDateString + "\n" +
+                "LongDateString: " + longDateString + "\n" +
+                "ShortTimeString: " + shortTimeString + "\n" +
+                "LongTimeString: " + longTimeString + "\n";

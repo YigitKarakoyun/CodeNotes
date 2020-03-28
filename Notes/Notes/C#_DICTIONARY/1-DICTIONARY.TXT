@@ -1,0 +1,33 @@
+// C# program to illustrate Dictionary 
+using System; 
+using System.Collections.Generic; 
+  
+class GFG { 
+  
+    // Main Method 
+    static public void Main() 
+    { 
+  
+        // Creating a dictionary 
+        // using Dictionary<TKey, TValue> class 
+        Dictionary<string, string> My_dict =  
+                    new Dictionary<string, string>(); 
+  
+        // Adding key/value pairs in the Dictionary 
+        // Using Add() method 
+        My_dict.Add("a.01", "C"); 
+        My_dict.Add("a.02", "C++"); 
+        My_dict.Add("a.03", "C#"); 
+  
+        foreach(KeyValuePair<string, string> element in My_dict) 
+        { 
+            Console.WriteLine("Key:- {0} and Value:- {1}",  
+                              element.Key, element.Value); 
+        } 
+    } 
+} 
+
+//Output
+Key:- a.01 and Value:- C
+Key:- a.02 and Value:- C++
+Key:- a.03 and Value:- C#

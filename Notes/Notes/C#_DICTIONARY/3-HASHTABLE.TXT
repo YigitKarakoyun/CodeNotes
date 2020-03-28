@@ -1,0 +1,27 @@
+// C# program to illustrate a hashtable 
+using System; 
+using System.Collections; 
+  
+class GFG { 
+  
+    // Main method 
+    static public void Main() 
+    { 
+  
+        // Create a hashtable 
+        // Using Hashtable class 
+        Hashtable my_hashtable = new Hashtable(); 
+  
+        // Adding key/value pair in the hashtable 
+        // Using Add() method 
+        my_hashtable.Add("A1", "Welcome"); 
+        my_hashtable.Add("A2", "to"); 
+        my_hashtable.Add("A3", "GeeksforGeeks"); 
+  
+        foreach(DictionaryEntry element in my_hashtable) 
+        { 
+            Console.WriteLine("Key:- {0} and Value:- {1} ", 
+                               element.Key, element.Value); 
+        } 
+    } 
+} 
