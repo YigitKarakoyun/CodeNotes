@@ -1,0 +1,6 @@
+Adresi
+https://pypi.org/project/pygame/
+
+Komutu
+pip install pygame
+
