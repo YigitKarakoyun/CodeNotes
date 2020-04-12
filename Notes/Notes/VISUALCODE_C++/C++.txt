@@ -1,0 +1,9 @@
+edit include path setting
+
+---Task.json ayarlama---
+ctrl+shift+p
+Tasks: Configure Task
+create task.json
+others
+
+"command":"g++ -g main.cpp"
