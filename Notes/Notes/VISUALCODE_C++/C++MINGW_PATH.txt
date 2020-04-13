@@ -1,0 +1,9 @@
+Bilgisayarım
+Gelişmiş Sistem Ayarı
+Ortam Değişkenini Düzenle
+Path
+Yeni
+C:\MinGW\bin
+
+cmd
+g++ --version
