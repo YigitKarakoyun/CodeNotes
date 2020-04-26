@@ -1,0 +1,36 @@
+public static void Backup()        
+{            
+       SaveFileDialog save = new SaveFileDialog();            
+       save.OverwritePrompt = false;           
+       save.CreatePrompt = true;            
+       save.Filter = "Veri dosyası|0.bak";            
+       save.FileName = DateTime.Now.ToShortDateString() + "_BarkodluSatisProgrami";            
+       if (save.ShowDialog() == DialogResult.OK)
+      {                                
+           try
+           {  
+                   Cursor.Current = Cursors.WaitCursor;                   
+                   if (File.Exists(save.FileName))
+                   {  
+                         File.Delete(save.FileName);                   
+                   }                    
+                   var dbPath = save.FileName;                    
+                   string dbyol = Application.StartupPath + @"\veritabani.mdf";
+                   using (var db = new vggEntities())
+                   {
+                          var cmd = String.Format("BACKUP DATABASE [" + dbyol + "] TO DISK='{1}' WITH FORMAT, MEDI ANAME='DbBackups', MEDIADESCRIPTION='Media set for {0} database';"                            , dbyol, dbPath);
+
+                         db.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, cmd);
+                    }                    
+                   Cursor.Current = Cursors.Default;                    
+                   MessageBox.Show("Yedekleme yapılmıştır");                
+                 }                
+           catch (Exception ex)
+           {                    
+                  MessageBox.Show(ex.ToString());                
+           }            
+     }        
+}
+//Backup işlem yaparken eğer aynı smde br yedek varsa onun üzerne ekleyecektir, mevcudun kapastesi katlanarak büyüyecektr. Onun isminde yedek alınmışsa önce bildiriyor sonra son yedeği almış oluyor
+
+

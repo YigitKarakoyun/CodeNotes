@@ -1,0 +1,18 @@
+public static void Restore()
+{
+         string strSql= @"data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\veritabani.mdf;integrated  security=True;MultipleActiveResultSets=True;App=EntityFramework";                
+         Cursor.Current = Cursors.WaitCursor;                
+         string yedekyolu = tDosya.Text;                
+         Application.DoEvents();                
+         string str = Application.StartupPath + "\\veritabani.mdf";                
+         using (SqlConnection connection = new SqlConnection(strSql))
+        {                    
+               connection.Open();                    
+              //SqlCommand isle = new SqlCommand(@"USE MASTER RESTORE DATABASE[vggt] FROM DISK = N'" + yed ekyolu + "' WITH CHECKSUM, RECOVERY, REPLACE, STATS = 10", connection);
+              SqlCommand isle = new SqlCommand(@"USE master; IF EXISTS(SELECT * FROM sys.databases where n ame = 'vggt') DROP DATABASE[" + str + "]; RESTORE DATABASE[" + str + "] FROM DISK = N'" + tDosya.Text + "'", con nection);                   
+               isle.ExecuteNonQuery();           
+               connection.Close();               
+        }
+}
+//Restore şlem yaparken vertabanı bağlantılarının olmamasına dikkat edin.
+
