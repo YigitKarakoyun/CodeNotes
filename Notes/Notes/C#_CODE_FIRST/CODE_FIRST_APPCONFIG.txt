@@ -1,3 +1,0 @@
-  <connectionStrings>
-    <add name="BAConnection" connectionString="Server=.;Database=BADb;User ID=sa;Password=123" providerName="System.Data.SqlClient"/>
-  </connectionStrings>
